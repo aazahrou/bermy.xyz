@@ -1,0 +1,61 @@
+body {
+  font-family: -apple-system, "BlinkMacSystemFont", "avenir next", "avenir",
+    "helvetica neue", "helvetica", "ubuntu", "roboto", "noto", "segoe ui",
+    "arial", "sans-serif";
+  /* font-weight: 300;
+  font-size: 16px;
+  margin: 0;*/
+  padding: 0;
+}
+
+.bg-1 {
+  background-color: #d2223e;
+}
+.bg-2 {
+  background-color: #5ab7e8;
+}
+.bg-3 {
+  background-color: #005aab;
+}
+.bg-4 {
+  background-color: #ef5189;
+}
+.bg-5 {
+  background-color: #00abcd;
+}
+.bg-6 {
+  background-color: #5e1e79;
+}
+.bg-7 {
+  background-color: #f8981c;
+}
+.bg-8 {
+  background-color: #a3238e;
+}
+.bg-9 {
+  background-color: #b0b91b;
+}
+.bg-10 {
+  background-color: #008f4c;
+}
+.bg-11 {
+  background-color: #008f4c;
+}
+
+@media screen and (min-width: 30em) {
+  .w-45-ns {
+    width: 45%;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .w-45-l {
+    width: 45%;
+  }
+}
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  .w-45-m {
+    width: 45%;
+  }
+}
