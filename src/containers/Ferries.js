@@ -10,6 +10,13 @@ const styles = wrap(
     section: 'bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto',
     h1: 'f1 lh-title',
     link: 'link dim',
+    table: 'collapse black ba br2 b--black-10 pv2 ph3 tc',
+    th: 'f5 lh-copy fw6 pv2 ph3',
+    td: 'pv2 ph3 nowrap',
+    blue: 'bg-blue f5 f4-ns lh-copy link dim ph3 pv2 mb2 mr1-l dib white tc w-100 w-auto-l',
+    pink: 'bg-pink f5 f4-ns lh-copy link dim ph3 pv2 mb2 mr1-l dib white tc w-100 w-auto-l',
+    green: 'bg-green f5 f4-ns lh-copy link dim ph3 pv2 mb2 mr1-l dib white tc w-100 w-auto-l',
+    orange: 'bg-orange f5 f4-ns lh-copy link dim ph3 pv2 mb2 mr1-l dib white tc w-100 w-auto-l',
   },
   css,
 )
@@ -40,29 +47,31 @@ export default getSiteProps(() => (
       </p>
     </div>
     <div className={css(tachyons('w-100 overflow-scroll flex-ns flex-column-ns items-center-ns'))}>
-      <table className={css(tachyons('collapse black ba br2 b--black-10 pv2 ph3 tc'))}>
+      <table className={styles.table}>
         <caption className={css(tachyons('f4 pv2 b lh-copy'))}>
           Hamilton Ferry Terminal Hours
         </caption>
         <thead>
-          <tr className={css(tachyons(''))}>
-            <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Mon-Fri</th>
-            <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Saturday</th>
-            <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Sun &amp; Holidays</th>
+          <tr>
+            <th className={styles.th}>Mon-Fri</th>
+            <th className={styles.th}>Saturday</th>
+            <th className={styles.th}>Sun &amp; Holidays</th>
           </tr>
         </thead>
         <tbody>
           <tr className={css(tachyons('striped--light-gray'))}>
-            <td className={css(tachyons('pv2 ph3 nowrap'))}>6:30am-8pm</td>
-            <td className={css(tachyons('pv2 ph3 nowrap'))}>7:30am-6pm</td>
-            <td className={css(tachyons('pv2 ph3 nowrap'))}>8:30am-6pm</td>
+            <td className={styles.td}>6:30am-8pm</td>
+            <td className={styles.td}>7:30am-6pm</td>
+            <td className={styles.td}>8:30am-6pm</td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
             <td colSpan="3" className={css(tachyons('pv3'))}>
-              For information call{' '}
-              <a className={css(tachyons('link" href="tel:+14412954506'))}>(441) 295-4506</a>
+              For information call&nbsp;
+              <a className={styles.link} href="tel:+14412954506">
+                (441) 295-4506
+              </a>
             </td>
           </tr>
         </tfoot>
@@ -70,40 +79,18 @@ export default getSiteProps(() => (
     </div>
     <p>Marine and Ports shall not be liable for loss or damage to property.</p>
     <div className={css(tachyons('flex flex-column flex-row-l'))}>
-      <p>
-        <a
-          className={css(
-            tachyons('f5 f4-ns lh-copy link dim ph3 pv2 mb2 dib white bg-blue tc w-100 w-auto-l'),
-          )}
-          href="#blueroute"
-        >
-          Blue Route<br />Hamilton &bull; Dockyard
-        </a>
-        <a
-          className={css(
-            tachyons('f5 f4-ns lh-copy link dim ph3 pv2 mb2 dib white bg-pink tc w-100 w-auto-l'),
-          )}
-          href="#pinkroute"
-        >
-          Pink Route<br />Hamilton &bull; Paget &bull; Warwick
-        </a>
-        <a
-          className={css(
-            tachyons('f5 f4-ns lh-copy link dim ph3 pv2 mb2 dib white bg-green tc w-100 w-auto-l'),
-          )}
-          href="#greenroute"
-        >
-          Green Route<br />Hamilton &bull; Southampton &bull; Sandys
-        </a>
-        <a
-          className={css(
-            tachyons('f5 f4-ns lh-copy link dim ph3 pv2 mb2 dib white bg-orange tc w-100 w-auto-l'),
-          )}
-          href="#orangeroute"
-        >
-          Orange Route<br />Dockyard &bull; St.&nbsp;George&rsquo;s
-        </a>
-      </p>
+      <a className={styles.blue} href="#blueroute">
+        Blue Route<br />Hamilton &bull; Dockyard
+      </a>
+      <a className={styles.pink} href="#pinkroute">
+        Pink Route<br />Hamilton &bull; Paget &bull; Warwick
+      </a>
+      <a className={styles.green} href="#greenroute">
+        Green Route<br />Hamilton &bull; Southampton &bull; Sandys
+      </a>
+      <a className={styles.orange} href="#orangeroute">
+        Orange Route<br />Dockyard &bull; St.&nbsp;George&rsquo;s
+      </a>
     </div>
   </section>
 ))
