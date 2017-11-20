@@ -39,5 +39,71 @@ export default getSiteProps(() => (
         </a>
       </p>
     </div>
+    <div className={css(tachyons('w-100 overflow-scroll flex-ns flex-column-ns items-center-ns'))}>
+      <table className={css(tachyons('collapse black ba br2 b--black-10 pv2 ph3 tc'))}>
+        <caption className={css(tachyons('f4 pv2 b lh-copy'))}>
+          Hamilton Ferry Terminal Hours
+        </caption>
+        <thead>
+          <tr className={css(tachyons(''))}>
+            <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Mon-Fri</th>
+            <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Saturday</th>
+            <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Sun &amp; Holidays</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr className={css(tachyons('striped--light-gray'))}>
+            <td className={css(tachyons('pv2 ph3 nowrap'))}>6:30am-8pm</td>
+            <td className={css(tachyons('pv2 ph3 nowrap'))}>7:30am-6pm</td>
+            <td className={css(tachyons('pv2 ph3 nowrap'))}>8:30am-6pm</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colSpan="3" className={css(tachyons('pv3'))}>
+              For information call{' '}
+              <a className={css(tachyons('link" href="tel:+14412954506'))}>(441) 295-4506</a>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <p>Marine and Ports shall not be liable for loss or damage to property.</p>
+    <div className={css(tachyons('flex flex-column flex-row-l'))}>
+      <p>
+        <a
+          className={css(
+            tachyons('f5 f4-ns lh-copy link dim ph3 pv2 mb2 dib white bg-blue tc w-100 w-auto-l'),
+          )}
+          href="#blueroute"
+        >
+          Blue Route<br />Hamilton &bull; Dockyard
+        </a>
+        <a
+          className={css(
+            tachyons('f5 f4-ns lh-copy link dim ph3 pv2 mb2 dib white bg-pink tc w-100 w-auto-l'),
+          )}
+          href="#pinkroute"
+        >
+          Pink Route<br />Hamilton &bull; Paget &bull; Warwick
+        </a>
+        <a
+          className={css(
+            tachyons('f5 f4-ns lh-copy link dim ph3 pv2 mb2 dib white bg-green tc w-100 w-auto-l'),
+          )}
+          href="#greenroute"
+        >
+          Green Route<br />Hamilton &bull; Southampton &bull; Sandys
+        </a>
+        <a
+          className={css(
+            tachyons('f5 f4-ns lh-copy link dim ph3 pv2 mb2 dib white bg-orange tc w-100 w-auto-l'),
+          )}
+          href="#orangeroute"
+        >
+          Orange Route<br />Dockyard &bull; St.&nbsp;George&rsquo;s
+        </a>
+      </p>
+    </div>
   </section>
 ))
