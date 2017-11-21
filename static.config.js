@@ -78,7 +78,7 @@ export default {
     },
     {
       path: '/ferries',
-      component: 'src/containers/Ferries',
+      component: 'src/containers/ferry-schedules/2018-winter.js',
     },
     {
       is404: true,
