@@ -13,9 +13,12 @@ const styles = wrap(
     table: 'collapse black ba br2 b--black-10 pv2 ph3 tc',
     th: 'f5 lh-copy fw6 pv2 ph3',
     td: 'pv2 ph3 nowrap',
-    blue: 'bg-blue f5 f4-ns lh-copy link dim ph3 pv2 mb2 mr1-l dib white tc w-100 w-auto-l flex-l items-center-l',
-    pink: 'bg-pink f5 f4-ns lh-copy link dim ph3 pv2 mb2 mr1-l dib white tc w-100 w-auto-l flex-l items-center-l',
-    green: 'bg-green f5 f4-ns lh-copy link dim ph3 pv2 mb2 mr1-l dib white tc w-100 w-auto-l flex-l items-center-l',
+    blue:
+      'bg-blue f5 f4-ns lh-copy link dim ph3 pv2 mb2 mr1-l dib white tc w-100 w-auto-l flex-l items-center-l',
+    pink:
+      'bg-pink f5 f4-ns lh-copy link dim ph3 pv2 mb2 mr1-l dib white tc w-100 w-auto-l flex-l items-center-l',
+    green:
+      'bg-green f5 f4-ns lh-copy link dim ph3 pv2 mb2 mr1-l dib white tc w-100 w-auto-l flex-l items-center-l',
     orange: 'bg-orange f5 f4-ns lh-copy ph3 pv2 mb2 mr1-l dib white tc w-100 w-auto-l',
   },
   css,
@@ -32,7 +35,7 @@ export default getSiteProps(({ title }) => (
   <div>
     <Head>
       <title>{title} | Winter Ferry Schedule</title>
-      <meta name="description" content="Bermuda ferry schedules" />
+      <meta name="description" content="Bermuda winter ferry schedule" />
     </Head>
     <section className={styles.section}>
       <div className={css(tachyons('tc'))}>
@@ -477,18 +480,28 @@ export default getSiteProps(({ title }) => (
         </tbody>
       </table>
     </blueroute>
-    <pinkroute id="pinkroute" className={css(tachyons('bg-pink white pv3 pv4-ns ph3 ph6-l flex flex-column items-center'))}>
+    <pinkroute
+      id="pinkroute"
+      className={css(tachyons('bg-pink white pv3 pv4-ns ph3 ph6-l flex flex-column items-center'))}
+    >
       <h1 className={css(tachyons('f3 lh-title tc mb0'))}>
-        Pink Route<br /><hr />Hamilton &bull; Paget &bull; Warwick<hr />
+        Pink Route<br />
+        <hr />Hamilton &bull; Paget &bull; Warwick<hr />
       </h1>
       <div className={css(tachyons('measure flex flex-column'))}>
-        <p className={css(tachyons('lh-copy'))}>The most scenic transportation for visitors and residents who are staying along or near Harbour Road. A delightful cruise through the inner harbour islands past charming Bermuda cottages and stately homes. A year-round service.</p>
+        <p className={css(tachyons('lh-copy'))}>
+          The most scenic transportation for visitors and residents who are staying along or near
+          Harbour Road. A delightful cruise through the inner harbour islands past charming Bermuda
+          cottages and stately homes. A year-round service.
+        </p>
       </div>
-      <div className={css(tachyons('w-100 overflow-scroll flex-ns flex-column-ns items-center-ns'))}>
-        <table className={css(tachyons('collapse bg-light-pink black ba br2 b--black-10 pv2 ph3 tc'))}>
-          <caption className={css(tachyons('white f3 f4-ns pv2'))}>
-            Monday - Friday
-          </caption>
+      <div
+        className={css(tachyons('w-100 overflow-scroll flex-ns flex-column-ns items-center-ns'))}
+      >
+        <table
+          className={css(tachyons('collapse bg-light-pink black ba br2 b--black-10 pv2 ph3 tc'))}
+        >
+          <caption className={css(tachyons('white f3 f4-ns pv2'))}>Monday - Friday</caption>
           <thead>
             <tr>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3-ns'))}>Leave Hamilton</th>
@@ -638,10 +651,10 @@ export default getSiteProps(({ title }) => (
             </tr>
           </tbody>
         </table>
-        <table className={css(tachyons('collapse bg-light-pink black ba br2 b--black-10 pv2 ph3 tc'))}>
-          <caption className={css(tachyons('white f3 f4-ns pv2'))}>
-            Saturdays
-          </caption>
+        <table
+          className={css(tachyons('collapse bg-light-pink black ba br2 b--black-10 pv2 ph3 tc'))}
+        >
+          <caption className={css(tachyons('white f3 f4-ns pv2'))}>Saturdays</caption>
           <thead>
             <tr className={css(tachyons(''))}>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3-ns'))}>Leave Hamilton</th>
@@ -728,7 +741,9 @@ export default getSiteProps(({ title }) => (
             </tr>
           </tbody>
         </table>
-        <table className={css(tachyons('collapse bg-light-pink black ba br2 b--black-10 pv2 ph3 tc'))}>
+        <table
+          className={css(tachyons('collapse bg-light-pink black ba br2 b--black-10 pv2 ph3 tc'))}
+        >
           <caption className={css(tachyons('white f3 f4-ns pv2'))}>
             Sundays and Public Holidays
           </caption>
@@ -811,26 +826,48 @@ export default getSiteProps(({ title }) => (
         </table>
       </div>
     </pinkroute>
-    <greenroute id="greenroute" className={css(tachyons('bg-green white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'))}>
+    <greenroute
+      id="greenroute"
+      className={css(
+        tachyons('bg-green white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
+      )}
+    >
       <h1 className={css(tachyons('f3 lh-title tc mb0'))}>
-        Green Route<br /><hr />Hamilton &bull; Watford Bridge &bull; Cavello Bay &bull; Rockaway<hr />
+        Green Route<br />
+        <hr />Hamilton &bull; Watford Bridge &bull; Cavello Bay &bull; Rockaway<hr />
       </h1>
       <div className={css(tachyons('measure flex flex-column'))}>
-        <p className={css(tachyons('lh-copy'))}>Commuting, Bermuda Style! This new service offers an express trip to Hamilton from Rockaway in Southampton. This is the way to start the day, with a pleasant cruise instead of driving into Town. It&rsquo;s also great for visitors who want to get to the shops quickly!</p>
+        <p className={css(tachyons('lh-copy'))}>
+          Commuting, Bermuda Style! This new service offers an express trip to Hamilton from
+          Rockaway in Southampton. This is the way to start the day, with a pleasant cruise instead
+          of driving into Town. It&rsquo;s also great for visitors who want to get to the shops
+          quickly!
+        </p>
         <div className={css(tachyons('flex flex-row'))}>
-          <svg className={css(tachyons('w-10'))} fill="#fff" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0h24v24H0z" fill="none"/>
-            <circle cx="12" cy="4" r="2"/>
-            <path d="M19 13v-2c-1.54.02-3.09-.75-4.07-1.83l-1.29-1.43c-.17-.19-.38-.34-.61-.45-.01 0-.01-.01-.02-.01H13c-.35-.2-.75-.3-1.19-.26C10.76 7.11 10 8.04 10 9.09V15c0 1.1.9 2 2 2h5v5h2v-5.5c0-1.1-.9-2-2-2h-3v-3.45c1.29 1.07 3.25 1.94 5 1.95zm-6.17 5c-.41 1.16-1.52 2-2.83 2-1.66 0-3-1.34-3-3 0-1.31.84-2.41 2-2.83V12.1c-2.28.46-4 2.48-4 4.9 0 2.76 2.24 5 5 5 2.42 0 4.44-1.72 4.9-4h-2.07z"/>
+          <svg
+            className={css(tachyons('w-10'))}
+            fill="#fff"
+            height="32"
+            viewBox="0 0 24 24"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="4" r="2" />
+            <path d="M19 13v-2c-1.54.02-3.09-.75-4.07-1.83l-1.29-1.43c-.17-.19-.38-.34-.61-.45-.01 0-.01-.01-.02-.01H13c-.35-.2-.75-.3-1.19-.26C10.76 7.11 10 8.04 10 9.09V15c0 1.1.9 2 2 2h5v5h2v-5.5c0-1.1-.9-2-2-2h-3v-3.45c1.29 1.07 3.25 1.94 5 1.95zm-6.17 5c-.41 1.16-1.52 2-2.83 2-1.66 0-3-1.34-3-3 0-1.31.84-2.41 2-2.83V12.1c-2.28.46-4 2.48-4 4.9 0 2.76 2.24 5 5 5 2.42 0 4.44-1.72 4.9-4h-2.07z" />
           </svg>
-          <div className={css(tachyons('w-90 pl2 lh-copy'))}>Accessible to persons with disability</div>
+          <div className={css(tachyons('w-90 pl2 lh-copy'))}>
+            Accessible to persons with disability
+          </div>
         </div>
       </div>
-      <div className={css(tachyons('w-100 overflow-scroll flex-ns flex-column-ns items-center-ns'))}>
-        <table className={css(tachyons('collapse bg-light-green black ba br2 b--black-10 pv2 ph3 tc'))}>
-          <caption className={css(tachyons('white f3 f4-ns pv2'))}>
-            Monday - Friday
-          </caption>
+      <div
+        className={css(tachyons('w-100 overflow-scroll flex-ns flex-column-ns items-center-ns'))}
+      >
+        <table
+          className={css(tachyons('collapse bg-light-green black ba br2 b--black-10 pv2 ph3 tc'))}
+        >
+          <caption className={css(tachyons('white f3 f4-ns pv2'))}>Monday - Friday</caption>
           <thead>
             <tr>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Hamilton</th>
