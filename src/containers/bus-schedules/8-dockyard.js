@@ -2,8 +2,17 @@ import React from 'react'
 import { getSiteProps, Head } from 'react-static'
 import { reset, tachyons } from 'glamor-tachyons'
 import { css, insertRule } from 'glamor'
+import glamorous from 'glamorous'
 //
 reset({ insertRule })
+
+const BusSchedule = glamorous.div(
+  tachyons('bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
+)
+
+const AverageTimes = glamorous.div(
+  tachyons('bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
+)
 
 export default getSiteProps(({ title }) => (
   <div>
@@ -11,7 +20,7 @@ export default getSiteProps(({ title }) => (
       <title>8 • Hamilton • Dockyard | {title}</title>
       <meta name="description" content="Bermuda bus schedule: 8 • Hamilton • Dockyard" />
     </Head>
-    <busschedule
+    <BusSchedule
       className={css(
         tachyons('bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
       )}
@@ -268,7 +277,7 @@ export default getSiteProps(({ title }) => (
         >
           <caption className={css(tachyons('f4 f3-ns pv2'))}>Sunday &amp; Holidays</caption>
           <thead>
-            <tr className={css(tachyons(''))}>
+            <tr>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Hamilton</th>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Dockyard</th>
             </tr>
@@ -353,19 +362,19 @@ export default getSiteProps(({ title }) => (
         <h4 className={css(tachyons('f4 fw6'))}>Notes</h4>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
           <dt className={css(tachyons('dib b'))}>sv</dt>
-          <dd className={css(tachyons('dib ml0 gray'))}>
+          <dd className={css(tachyons('dib ml1 gray'))}>
             Trip operates via Sound View Road. 8.15 AM trip does not serve Somerset Terminal.
           </dd>
         </dl>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
           <dt className={css(tachyons('dib b'))}>xp</dt>
-          <dd className={css(tachyons('dib ml0 gray'))}>
+          <dd className={css(tachyons('dib ml1 gray'))}>
             Trip operates express between Barnes Corner and Crow Lane.
           </dd>
         </dl>
       </div>
-    </busschedule>
-    <averagetimes
+    </BusSchedule>
+    <AverageTimes
       className={css(
         tachyons('bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
       )}
@@ -427,6 +436,6 @@ export default getSiteProps(({ title }) => (
           </tbody>
         </table>
       </div>
-    </averagetimes>
+    </AverageTimes>
   </div>
 ))

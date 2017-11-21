@@ -1,7 +1,8 @@
 import React from 'react'
-import { getSiteProps, Head } from 'react-static'
+import { getSiteProps, Head, Link } from 'react-static'
 import { wrap, reset, tachyons } from 'glamor-tachyons'
 import { css, insertRule } from 'glamor'
+import glamorous from 'glamorous'
 //
 reset({ insertRule })
 
@@ -14,13 +15,16 @@ const styles = wrap(
   css,
 )
 
-const CustomWidth100and45 = css({
+const Fares = glamorous.div(
+  tachyons('bg-light-gray pv3 pv4-ns ph3 ph6-l flex flex-column flex-auto'),
+)
+
+const TableWidth45 = glamorous.div({
   width: '100%',
   '@media screen and (min-width: 60em)': {
     width: '45%',
   },
 })
-
 export default getSiteProps(({ title }) => (
   <div>
     <Head>
@@ -95,12 +99,12 @@ export default getSiteProps(({ title }) => (
       </div>
       <h1 className={css(tachyons('f4 lh-copy'))}>Grotto bay</h1>
       <div className={css(tachyons('flex flex-column flex-row-ns'))}>
-        <p>
-          <a
+        <div>
+          <Link
+            to="/buses/1-grotto-bay"
             className={css(
               tachyons('lh-copy link dim ph3 pv2 mb2 dib white mr1 bg-blue tc w-100 w-auto-l'),
             )}
-            href="./buses/1-grotto-bay"
           >
             <span className={css(tachyons('f3 f4-ns'))}>1</span>
             <span className={css(tachyons('dn di-ns'))}>&nbsp;&bull;&nbsp;</span>
@@ -108,14 +112,14 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; Grotto Bay</span>
-          </a>
-          <a
+          </Link>
+          <Link
+            to="/buses/3-grotto-bay"
             className={css(
               tachyons(
                 'f3 f4-ns lh-copy link dim ph3 pv2 mb2 dib white mr1 bg-blue tc w-100 w-auto-l',
               ),
             )}
-            href="./buses/3-grotto-bay"
           >
             <span className={css(tachyons('f3 f4-ns'))}>3</span>
             <span className={css(tachyons('dn di-ns'))}>&nbsp;&bull;&nbsp;</span>
@@ -123,19 +127,19 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; Grotto Bay</span>
-          </a>
-        </p>
+          </Link>
+        </div>
       </div>
       <h1 className={css(tachyons('f4 lh-copy'))}>St. George&rsquo;s</h1>
       <div className={css(tachyons('flex flex-column flex-row-ns'))}>
-        <p>
-          <a
+        <div>
+          <Link
+            to="/buses/1-st-georges"
             className={css(
               tachyons(
                 'f3 f4-ns lh-copy link dim ph3 pv2 mb2 dib white mr1 bg-blue tc w-100 w-30-l',
               ),
             )}
-            href="./buses/1-st-georges"
           >
             <span className={css(tachyons('f3 f4-ns'))}>1</span>
             <span className={css(tachyons('dn di-ns'))}>&nbsp;&bull;&nbsp;</span>
@@ -143,14 +147,14 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; St. George&rsquo;s</span>
-          </a>
-          <a
+          </Link>
+          <Link
+            to="/buses/3-st-georges"
             className={css(
               tachyons(
                 'f3 f4-ns lh-copy link dim ph3 pv2 mb2 dib white mr1 bg-blue tc w-100 w-30-l',
               ),
             )}
-            href="./buses/3-st-georges"
           >
             <span className={css(tachyons('f3 f4-ns'))}>3</span>
             <span className={css(tachyons('dn di-ns'))}>&nbsp;&bull;&nbsp;</span>
@@ -158,14 +162,14 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; St. George&rsquo;s</span>
-          </a>
-          <a
+          </Link>
+          <Link
+            to="/buses/6-st-georges"
             className={css(
               tachyons(
                 'f3 f4-ns lh-copy link dim ph3 pv2 mb2 dib white mr1 bg-blue tc w-100 w-30-l',
               ),
             )}
-            href="./buses/6-st-georges"
           >
             <span className={css(tachyons('f3 f4-ns'))}>6</span>
             <span className={css(tachyons('dn di-ns'))}>&nbsp;&bull;&nbsp;</span>
@@ -173,14 +177,14 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>St. George&rsquo;s &bull; St. David&rsquo;s</span>
-          </a>
-          <a
+          </Link>
+          <Link
+            to="/buses/10-st-georges"
             className={css(
               tachyons(
                 'f3 f4-ns lh-copy link dim ph3 pv2 mb2 dib white mr1 bg-blue tc w-100 w-30-l',
               ),
             )}
-            href="./buses/10-st-georges"
           >
             <span className={css(tachyons('f3 f4-ns'))}>10</span>
             <span className={css(tachyons('dn di-ns'))}>&nbsp;&bull;&nbsp;</span>
@@ -188,14 +192,14 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; St. George&rsquo;s</span>
-          </a>
-          <a
+          </Link>
+          <Link
+            to="/buses/11-st-georges"
             className={css(
               tachyons(
                 'f3 f4-ns lh-copy link dim ph3 pv2 mb2 dib white mr1 bg-blue tc w-100 w-30-l',
               ),
             )}
-            href="./buses/11-st-georges"
           >
             <span className={css(tachyons('f3 f4-ns'))}>11</span>
             <span className={css(tachyons('dn di-ns'))}>&nbsp;&bull;&nbsp;</span>
@@ -203,8 +207,8 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; St. George&rsquo;s</span>
-          </a>
-        </p>
+          </Link>
+        </div>
       </div>
       <h1 className={css(tachyons('f3 lh-copy'))}>Central</h1>
       <div className={css(tachyons('w-100'))}>
@@ -212,14 +216,14 @@ export default getSiteProps(({ title }) => (
       </div>
       <h1 className={css(tachyons('f4 lh-copy'))}>Spanish Point / Pond Hill / Prospect</h1>
       <div className={css(tachyons('flex flex-column flex-row-ns'))}>
-        <p>
-          <a
+        <div>
+          <Link
+            to="/buses/4-spanish-point"
             className={css(
               tachyons(
                 'f3 f4-ns lh-copy link dim ph3 pv2 mb2 dib white mr1 bg-blue tc w-100 w-auto-l',
               ),
             )}
-            href="./buses/4-spanish-point"
           >
             <span className={css(tachyons('f3 f4-ns'))}>4</span>
             <span className={css(tachyons('dn di-ns'))}>&nbsp;&bull;&nbsp;</span>
@@ -227,14 +231,14 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; Spanish Point</span>
-          </a>
-          <a
+          </Link>
+          <Link
+            to="/buses/5-pond-hill"
             className={css(
               tachyons(
                 'f3 f4-ns lh-copy link dim ph3 pv2 mb2 dib white mr1 bg-blue tc w-100 w-auto-l',
               ),
             )}
-            href="./buses/5-pond-hill"
           >
             <span className={css(tachyons('f3 f4-ns'))}>5</span>
             <span className={css(tachyons('dn di-ns'))}>&nbsp;&bull;&nbsp;</span>
@@ -242,14 +246,14 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; Pond Hill</span>
-          </a>
-          <a
+          </Link>
+          <Link
             className={css(
               tachyons(
                 'f3 f4-ns lh-copy link dim ph3 pv2 mb2 dib white mr1 bg-blue tc w-100 w-auto-l',
               ),
             )}
-            href="./buses/9-prospect"
+            to="/buses/9-prospect"
           >
             <span className={css(tachyons('f3 f4-ns'))}>9</span>
             <span className={css(tachyons('dn di-ns'))}>&nbsp;&bull;&nbsp;</span>
@@ -257,8 +261,8 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; Prospect</span>
-          </a>
-        </p>
+          </Link>
+        </div>
       </div>
       <h1 className={css(tachyons('f3 lh-copy'))}>West</h1>
       <div className={css(tachyons('w-100'))}>
@@ -266,14 +270,14 @@ export default getSiteProps(({ title }) => (
       </div>
       <h1 className={css(tachyons('f4 lh-copy'))}>Ord Road</h1>
       <div className={css(tachyons('flex flex-column flex-row-ns'))}>
-        <p>
-          <a
+        <div>
+          <Link
+            to="/buses/2-ord-road"
             className={css(
               tachyons(
                 'f3 f4-ns lh-copy link dim ph3 pv2 mb2 dib white mr1 bg-blue tc w-100 w-auto-l',
               ),
             )}
-            href="./buses/2-ord-road"
           >
             <span className={css(tachyons('f3 f4-ns'))}>2</span>
             <span className={css(tachyons('dn di-ns'))}>&nbsp;&bull;&nbsp;</span>
@@ -281,19 +285,19 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; Ord Road</span>
-          </a>
-        </p>
+          </Link>
+        </div>
       </div>
       <h1 className={css(tachyons('f4 lh-copy'))}>Barnes Corner / Somerset / Dockyard</h1>
       <div className={css(tachyons('flex flex-column flex-row-ns'))}>
-        <p>
-          <a
+        <div>
+          <Link
+            to="/buses/7-barnes-corner"
             className={css(
               tachyons(
                 'f3 f4-ns lh-copy link dim ph3 pv2 mb2 dib white mr1 bg-blue tc w-100 w-30-l',
               ),
             )}
-            href="./buses/7-barnes-corner"
           >
             <span className={css(tachyons('f3 f4-ns'))}>7</span>
             <span className={css(tachyons('dn di-ns'))}>&nbsp;&bull;&nbsp;</span>
@@ -302,14 +306,14 @@ export default getSiteProps(({ title }) => (
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; Barnes Corner</span>
             <div className={css(tachyons('f6'))}>via South Shore Beaches 🏖</div>
-          </a>
-          <a
+          </Link>
+          <Link
+            to="/buses/7-dockyard"
             className={css(
               tachyons(
                 'f3 f4-ns lh-copy link dim ph3 pv2 mb2 dib white mr1 bg-blue tc w-100 w-30-l',
               ),
             )}
-            href="./buses/7-dockyard"
           >
             <span className={css(tachyons('f3 f4-ns'))}>7</span>
             <span className={css(tachyons('dn di-ns'))}>&nbsp;&bull;&nbsp;</span>
@@ -318,14 +322,14 @@ export default getSiteProps(({ title }) => (
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; Dockyard</span>
             <div className={css(tachyons('f6'))}>via South Shore Beaches 🏖</div>
-          </a>
-          <a
+          </Link>
+          <Link
+            to="/buses/8-dockyard"
             className={css(
               tachyons(
                 'f3 f4-ns lh-copy link dim ph3 pv2 mb2 dib white mr1 bg-blue tc w-100 w-30-l',
               ),
             )}
-            href="./buses/8-dockyard"
           >
             <span className={css(tachyons('f3 f4-ns'))}>8</span>
             <span className={css(tachyons('dn di-ns'))}>&nbsp;&bull;&nbsp;</span>
@@ -334,14 +338,14 @@ export default getSiteProps(({ title }) => (
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; Dockyard</span>
             <div className={css(tachyons('f6'))}>via Middle Road</div>
-          </a>
-          <a
+          </Link>
+          <Link
+            to="/buses/8-somerset"
             className={css(
               tachyons(
                 'f3 f4-ns lh-copy link dim ph3 pv2 mb2 dib white mr1 bg-blue tc w-100 w-30-l',
               ),
             )}
-            href="./buses/8-somerset"
           >
             <span className={css(tachyons('f3 f4-ns'))}>8</span>
             <span className={css(tachyons('dn di-ns'))}>&nbsp;&bull;&nbsp;</span>
@@ -350,14 +354,14 @@ export default getSiteProps(({ title }) => (
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; Somerset</span>
             <div className={css(tachyons('f6'))}>via Middle Road</div>
-          </a>
-          <a
+          </Link>
+          <Link
+            to="/buses/8-cedar-hill"
             className={css(
               tachyons(
                 'f3 f4-ns lh-copy link dim ph3 pv2 mb2 dib white mr1 bg-blue tc w-100 w-30-l',
               ),
             )}
-            href="./buses/8-cedar-hill"
           >
             <span className={css(tachyons('f3 f4-ns'))}>8</span>
             <span className={css(tachyons('dn di-ns'))}>&nbsp;&bull;&nbsp;</span>
@@ -366,14 +370,11 @@ export default getSiteProps(({ title }) => (
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; Cedar Hill</span>
             <div className={css(tachyons('f6'))}>via Middle Road</div>
-          </a>
-        </p>
+          </Link>
+        </div>
       </div>
     </section>
-    <fares
-      id="fares"
-      className={css(tachyons('bg-light-gray pv3 pv4-ns ph3 ph6-l flex flex-column flex-auto'))}
-    >
+    <Fares id="fares">
       <h1 className={css(tachyons('f2 lh-title'))}>Fare Information</h1>
       <div className={css(tachyons('lh-copy'))}>
         <p>Please ensure you have the correct fare before boarding.</p>
@@ -404,7 +405,7 @@ export default getSiteProps(({ title }) => (
             <path d="M0 0h24v24H0z" fill="none" />
             <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z" />
           </svg>
-          &nbsp;buses. Tickets and Tokens for 3 zone work on the{' '}
+          &nbsp;buses. Tickets and Tokens for 3 zone work on the
           <span className={css(tachyons('white bg-pink'))}>Pink</span> route.
         </p>
       </div>
@@ -414,7 +415,7 @@ export default getSiteProps(({ title }) => (
         <li>Children under age 5</li>
       </ul>
       <div className={css(tachyons('flex flex-column flex-row-l justify-between'))}>
-        <div className={CustomWidth100and45}>
+        <TableWidth45>
           <h1 className={css(tachyons('f3 lh-copy'))}>Passes</h1>
           <table
             className={css(tachyons('collapse w-100 bg-white black ba br2 b--black-10 pv2 ph3 tc'))}
@@ -466,13 +467,13 @@ export default getSiteProps(({ title }) => (
               </tr>
             </tbody>
           </table>
-          <p className={css(tachyons('lh-copy'))}>
+          <div className={css(tachyons('lh-copy'))}>
             <strong>Student Passes</strong> (Residents Only) &bull; All Students must present a
             Student Pass for free transportation. If Student Pass not presented, child (Age 5 - 15)
             or Adult (Age 16+) fares apply.
-          </p>
-        </div>
-        <div className={CustomWidth100and45}>
+          </div>
+        </TableWidth45>
+        <TableWidth45>
           <h1 className={css(tachyons('f3 lh-copy'))}>Tickets/Tokens</h1>
           <table
             className={css(tachyons('collapse w-100 bg-white black ba br2 b--black-10 pv2 ph3 tc'))}
@@ -511,8 +512,8 @@ export default getSiteProps(({ title }) => (
               </tr>
             </tbody>
           </table>
-        </div>
+        </TableWidth45>
       </div>
-    </fares>
+    </Fares>
   </div>
 ))

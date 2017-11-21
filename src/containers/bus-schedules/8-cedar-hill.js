@@ -2,8 +2,13 @@ import React from 'react'
 import { getSiteProps, Head } from 'react-static'
 import { reset, tachyons } from 'glamor-tachyons'
 import { css, insertRule } from 'glamor'
+import glamorous from 'glamorous'
 //
 reset({ insertRule })
+
+const BusSchedule = glamorous.div(
+  tachyons('bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
+)
 
 export default getSiteProps(({ title }) => (
   <div>
@@ -11,7 +16,7 @@ export default getSiteProps(({ title }) => (
       <title>8 • Hamilton • Cedar Hill | {title}</title>
       <meta name="description" content="Bermuda bus schedule: 8 • Hamilton • Cedar Hill" />
     </Head>
-    <busschedule
+    <BusSchedule
       className={css(
         tachyons('bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
       )}
@@ -156,7 +161,7 @@ export default getSiteProps(({ title }) => (
         >
           <caption className={css(tachyons('f4 f3-ns pv2'))}>Sunday &amp; Holidays</caption>
           <thead>
-            <tr className={css(tachyons(''))}>
+            <tr>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Hamilton</th>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Cedar Hill</th>
             </tr>
@@ -209,14 +214,14 @@ export default getSiteProps(({ title }) => (
         <h4 className={css(tachyons('f4 fw6'))}>Notes</h4>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
           <dt className={css(tachyons('dib b'))}>Outbound</dt>
-          <dd className={css(tachyons('dib ml0 gray'))}>
+          <dd className={css(tachyons('dib ml1 gray'))}>
             Buses leaving Hamilton at the times shown above, and marked "8C Dockyard" or "8C
             Somerset", will operate via Cedar Hill.
           </dd>
         </dl>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
           <dt className={css(tachyons('dib b'))}>Inbound</dt>
-          <dd className={css(tachyons('dib ml0 gray'))}>
+          <dd className={css(tachyons('dib ml1 gray'))}>
             Buses listed above departing Cedar Hill at 45 minutes past the hour are the regular
             Route 8 trips departing Dockyard at 05 minutes past the hour and Somerset at 15 minutes
             past the hour. These trips will operate through Cedar Hill at approximately the times
@@ -224,6 +229,6 @@ export default getSiteProps(({ title }) => (
           </dd>
         </dl>
       </div>
-    </busschedule>
+    </BusSchedule>
   </div>
 ))

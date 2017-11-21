@@ -2,8 +2,13 @@ import React from 'react'
 import { getSiteProps, Head } from 'react-static'
 import { reset, tachyons } from 'glamor-tachyons'
 import { css, insertRule } from 'glamor'
+import glamorous from 'glamorous'
 //
 reset({ insertRule })
+
+const BusSchedule = glamorous.div(
+  tachyons('bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
+)
 
 export default getSiteProps(({ title }) => (
   <div>
@@ -11,14 +16,14 @@ export default getSiteProps(({ title }) => (
       <title>7 • Hamilton • Barnes Corner | {title}</title>
       <meta name="description" content="Bermuda bus schedule: 7 • Hamilton • Barnes Corner" />
     </Head>
-    <busschedule
+    <BusSchedule
       className={css(
         tachyons('bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
       )}
     >
       <h1 className={css(tachyons('f3 f1-ns lh-copy tc'))}>
         7 &bull; Hamilton &bull; Barnes Corner
-        <p className={css(tachyons('f5 f4-ns'))}>via South Shore Beaches</p>
+        <p className={css(tachyons('f5 f4-ns'))}>via South Shore Beaches 🏖</p>
       </h1>
       <div className={css(tachyons('flex flex-column flex-row-l justify-around w-100'))}>
         <table
@@ -156,7 +161,7 @@ export default getSiteProps(({ title }) => (
         >
           <caption className={css(tachyons('f4 f3-ns pv2'))}>Saturday</caption>
           <thead>
-            <tr className={css(tachyons(''))}>
+            <tr>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Hamilton</th>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Barnes Corner</th>
             </tr>
@@ -254,7 +259,7 @@ export default getSiteProps(({ title }) => (
         >
           <caption className={css(tachyons('f4 f3-ns pv2'))}>Sunday &amp; Holidays</caption>
           <thead>
-            <tr className={css(tachyons(''))}>
+            <tr>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Hamilton</th>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Barnes Corner</th>
             </tr>
@@ -308,18 +313,18 @@ export default getSiteProps(({ title }) => (
         <h4 className={css(tachyons('f4 fw6'))}>Notes</h4>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
           <dt className={css(tachyons('dib b'))}>pr</dt>
-          <dd className={css(tachyons('dib ml0 gray'))}>
+          <dd className={css(tachyons('dib ml1 gray'))}>
             Inbound trip scheduled to depart at 3:34 pm operates via Port Royal School route; this
             trip does not serve Barnes Corner.
           </dd>
         </dl>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
           <dt className={css(tachyons('dib b'))}>sb</dt>
-          <dd className={css(tachyons('dib ml0 gray'))}>
+          <dd className={css(tachyons('dib ml1 gray'))}>
             Trip operates to or from Sonesta Beach Hotel; does not serve Barnes Corner.
           </dd>
         </dl>
       </div>
-    </busschedule>
+    </BusSchedule>
   </div>
 ))

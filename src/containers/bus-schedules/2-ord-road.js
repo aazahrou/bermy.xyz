@@ -150,7 +150,7 @@ export default getSiteProps(({ title }) => (
         <h4 className={css(tachyons('f4 fw6'))}>Notes</h4>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
           <dt className={css(tachyons('dib b'))}>hs</dt>
-          <dd className={css(tachyons('dib ml0 gray'))}>
+          <dd className={css(tachyons('dib ml1 gray'))}>
             Trip operates via Harrington Sound School route; does not serve South Road between
             Devil&rsquo;s Hole and Collectors Hill.
           </dd>

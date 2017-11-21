@@ -49,14 +49,14 @@ export default getSiteProps(({ title }) => (
           </svg>
           &nbsp;Summer Ferry Schedule
         </h1>
-        <p>Effective from 24 April 2017 to 29 October 2017</p>
-        <p>Service is subject to change</p>
-        <p>
+        <div>Effective from 24 April 2017 to 29 October 2017</div>
+        <div>Service is subject to change</div>
+        <div>
           Ferry scheduling information and alert notifications<br />
           <a className={styles.link} href="http://www.marineandports.bm/ferries_about.aspx">
             www.marineandports.bm/ferries_about.aspx
           </a>
-        </p>
+        </div>
       </div>
       <div
         className={css(tachyons('w-100 overflow-scroll flex-ns flex-column-ns items-center-ns'))}
@@ -91,7 +91,7 @@ export default getSiteProps(({ title }) => (
           </tfoot>
         </table>
       </div>
-      <p>Marine and Ports shall not be liable for loss or damage to property.</p>
+      <div>Marine and Ports shall not be liable for loss or damage to property.</div>
       <div className={css(tachyons('flex flex-column flex-row-l pt3-l'))}>
         <a className={styles.blue} href="#blueroute">
           Blue Route<br />Hamilton &bull; Dockyard
@@ -107,18 +107,18 @@ export default getSiteProps(({ title }) => (
         </a>
       </div>
     </section>
-    <fares
+    <div
       id="fares"
       className={css(tachyons('bg-light-gray pv3 pv4-ns ph3 ph6-l flex flex-column flex-auto'))}
     >
       <h1 className={css(tachyons('f2 lh-title'))}>Fare Information</h1>
       <div className={css(tachyons('lh-copy'))}>
-        <p>Please ensure you have the correct fare before boarding.</p>
-        <p>
+        <div>Please ensure you have the correct fare before boarding.</div>
+        <div>
           Passes, Tokens, and Tickets are available from the Hamilton Ferry &amp; Bus Terminals,
           Visitors Information Centres, sub-post offices, hotels, and guest houses.
-        </p>
-        <p>
+        </div>
+        <div>
           Passes, Tokens, and Tickets are valid on all routes for both&nbsp;
           <svg
             fill="#000000"
@@ -143,7 +143,7 @@ export default getSiteProps(({ title }) => (
           </svg>
           &nbsp;buses. Tickets and Tokens for the Pink route are considered 3 zone for buses.
           Tickets and Tokens for Blue / Green / Orange routes are considered 14 zone for buses.
-        </p>
+        </div>
       </div>
       <h1 className={css(tachyons('f3 lh-copy'))}>Free</h1>
       <ul>
@@ -203,11 +203,11 @@ export default getSiteProps(({ title }) => (
               </tr>
             </tbody>
           </table>
-          <p className={css(tachyons('lh-copy'))}>
+          <div className={css(tachyons('lh-copy'))}>
             <strong>Student Passes</strong> (Residents Only) &bull; All Students must present a
             Student Pass for free transportation. If Student Pass not presented, child (Age 5 - 15)
             or Adult (Age 16+) fares apply.
-          </p>
+          </div>
         </div>
         <div className={CustomWidth100and45}>
           <h1 className={css(tachyons('f3 lh-copy'))}>Tickets/Tokens</h1>
@@ -320,11 +320,11 @@ export default getSiteProps(({ title }) => (
           </table>
         </div>
       </div>
-    </fares>
+    </div>
     <blueroute
       id="blueroute"
       className={css(
-        tachyons('bg-blue white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-aut'),
+        tachyons('bg-blue white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
       )}
     >
       <h1 className={css(tachyons('f3 lh-title tc mb0'))}>
@@ -332,11 +332,11 @@ export default getSiteProps(({ title }) => (
         <hr />Hamilton &bull; Royal Naval Dockyard<hr />
       </h1>
       <div className={css(tachyons('measure flex flex-column'))}>
-        <p className={css(tachyons('lh-copy'))}>
+        <div className={css(tachyons('lh-copy'))}>
           The trip to the West End is one of the finest sightseeing cruises available anywhere! See
           a completely different aspect of the island on your way to the Royal Naval Dockyard, which
           is full of interesting things to do and places to eat and shop!
-        </p>
+        </div>
         <div className={css(tachyons('flex flex-row'))}>
           <svg
             className={css(tachyons('w-10'))}
@@ -560,7 +560,7 @@ export default getSiteProps(({ title }) => (
         Pink Route<br /><hr />Hamilton &bull; Paget &bull; Warwick<hr />
       </h1>
       <div className={css(tachyons('measure flex flex-column'))}>
-        <p className={css(tachyons('lh-copy'))}>The most scenic transportation for visitors and residents who are staying along or near Harbour Road. A delightful cruise through the inner harbour islands past charming Bermuda cottages and stately homes. A year-round service.</p>
+        <div className={css(tachyons('lh-copy'))}>The most scenic transportation for visitors and residents who are staying along or near Harbour Road. A delightful cruise through the inner harbour islands past charming Bermuda cottages and stately homes. A year-round service.</div>
       </div>
       <div className={css(tachyons('w-100 overflow-scroll flex-ns flex-column-ns items-center-ns'))}>
         <table className={css(tachyons('collapse bg-light-pink black ba br2 b--black-10 pv2 ph3 tc'))}>
@@ -721,7 +721,7 @@ export default getSiteProps(({ title }) => (
             Saturdays
           </caption>
           <thead>
-            <tr className={css(tachyons(''))}>
+            <tr>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3-ns'))}>Leave Hamilton</th>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3-ns'))}>Lower Ferry</th>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3-ns'))}>Hodsdon&rsquo;s Ferry</th>
@@ -894,7 +894,7 @@ export default getSiteProps(({ title }) => (
         Green Route<br /><hr />Hamilton &bull; Watford Bridge &bull; Cavello Bay &bull; Rockaway<hr />
       </h1>
       <div className={css(tachyons('measure flex flex-column'))}>
-        <p className={css(tachyons('lh-copy'))}>Commuting, Bermuda Style! This new service offers an express trip to Hamilton from Rockaway in Southampton. This is the way to start the day, with a pleasant cruise instead of driving into Town. It&rsquo;s also great for visitors who want to get to the shops quickly!</p>
+        <div className={css(tachyons('lh-copy'))}>Commuting, Bermuda Style! This new service offers an express trip to Hamilton from Rockaway in Southampton. This is the way to start the day, with a pleasant cruise instead of driving into Town. It&rsquo;s also great for visitors who want to get to the shops quickly!</div>
         <div className={css(tachyons('flex flex-row'))}>
           <svg className={css(tachyons('w-10'))} fill="#fff" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 0h24v24H0z" fill="none"/>
@@ -970,7 +970,7 @@ export default getSiteProps(({ title }) => (
         Orange Route<br /><hr />Royal Naval Dockyard &bull; St.&nbsp;George&rsquo;s<hr />
       </h1>
       <div className={css(tachyons('measure flex flex-column'))}>
-        <p className={css(tachyons('lh-copy'))}>Travel to St.&nbsp;George&rsquo;s by ferry, the way Bermudians did it 300 years ago and step back in time. St.&nbsp;George&rsquo;s is a World Heritage Site and the cultural centre of Old Bermuda. Explore its old world alleys and hidden treasures and visit its forts and museums.</p>
+        <div className={css(tachyons('lh-copy'))}>Travel to St.&nbsp;George&rsquo;s by ferry, the way Bermudians did it 300 years ago and step back in time. St.&nbsp;George&rsquo;s is a World Heritage Site and the cultural centre of Old Bermuda. Explore its old world alleys and hidden treasures and visit its forts and museums.</div>
         <div className={css(tachyons('flex flex-row'))}>
           <svg className={css(tachyons('w-10'))} fill="#fff" height="32" viewBox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 0h24v24H0z" fill="none"/>

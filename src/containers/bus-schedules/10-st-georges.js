@@ -2,8 +2,13 @@ import React from 'react'
 import { getSiteProps, Head } from 'react-static'
 import { reset, tachyons } from 'glamor-tachyons'
 import { css, insertRule } from 'glamor'
+import glamorous from 'glamorous'
 //
 reset({ insertRule })
+
+const BusSchedule = glamorous.div(
+  tachyons('bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
+)
 
 export default getSiteProps(({ title }) => (
   <div>
@@ -11,11 +16,7 @@ export default getSiteProps(({ title }) => (
       <title>10 • Hamilton • St. George's | {title}</title>
       <meta name="description" content="Bermuda bus schedule: 10 • Hamilton • St. George's" />
     </Head>
-    <busschedule
-      className={css(
-        tachyons('bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
-      )}
-    >
+    <BusSchedule>
       <h1 className={css(tachyons('f3 f1-ns lh-copy tc'))}>
         10 &bull; Hamilton &bull; St. George&rsquo;s
         <p className={css(tachyons('f5 f4-ns'))}>via Palmetto Road, Aquarium and Perfume Factory</p>
@@ -172,7 +173,7 @@ export default getSiteProps(({ title }) => (
         >
           <caption className={css(tachyons('f4 f3-ns pv2'))}>Sunday &amp; Holidays</caption>
           <thead>
-            <tr className={css(tachyons(''))}>
+            <tr>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Hamilton</th>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave St. George&rsquo;s</th>
             </tr>
@@ -225,11 +226,11 @@ export default getSiteProps(({ title }) => (
         <h4 className={css(tachyons('f4 fw6'))}>Notes</h4>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
           <dt className={css(tachyons('dib b'))}>xp</dt>
-          <dd className={css(tachyons('dib ml0 gray'))}>
+          <dd className={css(tachyons('dib ml1 gray'))}>
             Trip operates express between Shelly Bay Plaza and Hamilton.
           </dd>
         </dl>
       </div>
-    </busschedule>
+    </BusSchedule>
   </div>
 ))

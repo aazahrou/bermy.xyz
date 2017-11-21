@@ -2,8 +2,17 @@ import React from 'react'
 import { getSiteProps, Head } from 'react-static'
 import { reset, tachyons } from 'glamor-tachyons'
 import { css, insertRule } from 'glamor'
+import glamorous from 'glamorous'
 //
 reset({ insertRule })
+
+const BusSchedule = glamorous.div(
+  tachyons('bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
+)
+
+const AverageTimes = glamorous.div(
+  tachyons('bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
+)
 
 export default getSiteProps(({ title }) => (
   <div>
@@ -11,7 +20,7 @@ export default getSiteProps(({ title }) => (
       <title>4 • Hamilton • Spanish Point | {title}</title>
       <meta name="description" content="Bermuda bus schedule: 4 • Hamilton • Spanish Point" />
     </Head>
-    <busschedule
+    <BusSchedule
       className={css(
         tachyons('bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
       )}
@@ -28,7 +37,7 @@ export default getSiteProps(({ title }) => (
           <thead>
             <tr>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Hamilton</th>
-              <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Grotto Bay</th>
+              <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Spanish Point</th>
             </tr>
           </thead>
           <tbody>
@@ -125,7 +134,7 @@ export default getSiteProps(({ title }) => (
           <thead>
             <tr>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Hamilton</th>
-              <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Grotto Bay</th>
+              <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Spanish Point</th>
             </tr>
           </thead>
           <tbody>
@@ -192,9 +201,9 @@ export default getSiteProps(({ title }) => (
         >
           <caption className={css(tachyons('f4 f3-ns pv2'))}>Sunday &amp; Holidays</caption>
           <thead>
-            <tr className={css(tachyons(''))}>
+            <tr>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Hamilton</th>
-              <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Grotto Bay</th>
+              <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Spanish Point</th>
             </tr>
           </thead>
           <tbody>
@@ -229,42 +238,42 @@ export default getSiteProps(({ title }) => (
         <h4 className={css(tachyons('f4 fw6'))}>Notes</h4>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
           <dt className={css(tachyons('dib b'))}>ns</dt>
-          <dd className={css(tachyons('dib ml0 gray'))}>Trip operates via North Shore Road.</dd>
+          <dd className={css(tachyons('dib ml1 gray'))}>Trip operates via North Shore Road.</dd>
         </dl>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
           <dt className={css(tachyons('dib b'))}>sj</dt>
-          <dd className={css(tachyons('dib ml0 gray'))}>
+          <dd className={css(tachyons('dib ml1 gray'))}>
             Trip operates via St. John&rsquo;s Road.
           </dd>
         </dl>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
           <dt className={css(tachyons('dib b'))}>bk</dt>
-          <dd className={css(tachyons('dib ml0 gray'))}>
+          <dd className={css(tachyons('dib ml1 gray'))}>
             Trip operates via Berkeley Road school route; does not serve St. John&rsquo;s Road
             between Berkeley Road and Admiralty House junction.
           </dd>
         </dl>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
           <dt className={css(tachyons('dib b'))}>bi</dt>
-          <dd className={css(tachyons('dib ml0 gray'))}>
+          <dd className={css(tachyons('dib ml1 gray'))}>
             Trip operates via Berkeley Road school route; does not serve Langton Hill.
           </dd>
         </dl>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
           <dt className={css(tachyons('dib b'))}>Outbound</dt>
-          <dd className={css(tachyons('dib ml0 gray'))}>
+          <dd className={css(tachyons('dib ml1 gray'))}>
             Buses travelling via North Shore Road will travel via Black Watch Pass.
           </dd>
         </dl>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
           <dt className={css(tachyons('dib b'))}>Inbound</dt>
-          <dd className={css(tachyons('dib ml0 gray'))}>
+          <dd className={css(tachyons('dib ml1 gray'))}>
             Buses travelling via North Shore Road will travel via Langton Hill. Collectors Hill.
           </dd>
         </dl>
       </div>
-    </busschedule>
-    <averagetimes
+    </BusSchedule>
+    <AverageTimes
       className={css(
         tachyons('bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
       )}
@@ -294,6 +303,6 @@ export default getSiteProps(({ title }) => (
           </tbody>
         </table>
       </div>
-    </averagetimes>
+    </AverageTimes>
   </div>
 ))

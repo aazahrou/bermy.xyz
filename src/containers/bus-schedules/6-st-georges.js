@@ -2,8 +2,17 @@ import React from 'react'
 import { getSiteProps, Head } from 'react-static'
 import { reset, tachyons } from 'glamor-tachyons'
 import { css, insertRule } from 'glamor'
+import glamorous from 'glamorous'
 //
 reset({ insertRule })
+
+const BusSchedule = glamorous.div(
+  tachyons('bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
+)
+
+const AverageTimes = glamorous.div(
+  tachyons('bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
+)
 
 export default getSiteProps(({ title }) => (
   <div>
@@ -11,7 +20,7 @@ export default getSiteProps(({ title }) => (
       <title>6 • St. George's • St. David's | {title}</title>
       <meta name="description" content="Bermuda bus schedule: 6 • St. George's • St. David's" />
     </Head>
-    <busschedule
+    <BusSchedule
       className={css(
         tachyons('bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
       )}
@@ -252,7 +261,7 @@ export default getSiteProps(({ title }) => (
         >
           <caption className={css(tachyons('f4 f3-ns pv2'))}>Sunday &amp; Holidays</caption>
           <thead>
-            <tr className={css(tachyons(''))}>
+            <tr>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave St. George&rsquo;s</th>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave St. David&rsquo;s</th>
             </tr>
@@ -308,32 +317,37 @@ export default getSiteProps(({ title }) => (
       <div className={css(tachyons('pa3 pa4-ns'))}>
         <h4 className={css(tachyons('f4 fw6'))}>Notes</h4>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
-          <dt className={css(tachyons('dib b'))}>hm</dt>
-          <dd className={css(tachyons('dib ml0 gray'))}>
+          <dt className={css(tachyons('dib b'))}>HM</dt>
+          <dd className={css(tachyons('dib ml1 gray'))}>
             This trip operates to Hamilton via Route 3.
           </dd>
         </dl>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
-          <dt className={css(tachyons('dib b'))}>ht</dt>
-          <dd className={css(tachyons('dib ml0 gray'))}>
-            On school days, trip operates to Warwick via Collector&rsquo;s Hill. On other days, trip
-            operates to Hamilton via Route 11.
+          <dt className={css(tachyons('dib b'))}>HT</dt>
+          <dd className={css(tachyons('dib ml1 gray'))}>
+          On school days, trip operates to Warwick via Collector's Hill. On other days, trip operates to Hamilton via Route 11.
           </dd>
         </dl>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
-          <dt className={css(tachyons('dib b'))}>sd</dt>
-          <dd className={css(tachyons('dib ml0 gray'))}>This trip operates on school days only.</dd>
+          <dt className={css(tachyons('dib b'))}>SD</dt>
+          <dd className={css(tachyons('dib ml1 gray'))}>This trip operates on school days only.</dd>
         </dl>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
-          <dt className={css(tachyons('dib b'))}>ss</dt>
-          <dd className={css(tachyons('dib ml0 gray'))}>
+          <dt className={css(tachyons('dib b'))}>MR</dt>
+          <dd className={css(tachyons('dib ml1 gray'))}>
+            Main Road (St. David's Road).
+          </dd>
+        </dl>
+        <dl className={css(tachyons('f5 lh-title mv2'))}>
+          <dt className={css(tachyons('dib b'))}>SS</dt>
+          <dd className={css(tachyons('dib ml1 gray'))}>
             All trips enter St. David&rsquo;s via Southside Road and exit via St. David&rsquo;s Main
             Road, and provide service to Clear Water Beach.
           </dd>
         </dl>
       </div>
-    </busschedule>
-    <averagetimes
+    </BusSchedule>
+    <AverageTimes
       className={css(
         tachyons('bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
       )}
@@ -371,6 +385,6 @@ export default getSiteProps(({ title }) => (
           </tbody>
         </table>
       </div>
-    </averagetimes>
+    </AverageTimes>
   </div>
 ))

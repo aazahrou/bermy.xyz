@@ -1,0 +1,35 @@
+{
+  "short_name": "Bermy.xyz",
+  "name": "Bermy.xyz",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/bermy-logo@1x.png",
+      "type": "image/png",
+      "sizes": "276x276"
+    },
+    {
+      "src": "/img/bermy-logo@2x.png",
+      "type": "image/png",
+      "sizes": "550x550"
+    },
+    {
+      "src": "/img/bermy-logo@3x.png",
+      "type": "image/png",
+      "sizes": "825x825"
+    }
+  ],
+  "start_url": "/?utm_source=homescreen"
+}

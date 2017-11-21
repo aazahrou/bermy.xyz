@@ -28,7 +28,7 @@ export default getSiteProps(({ title }) => (
           <thead>
             <tr>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Hamilton</th>
-              <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Pond Road</th>
+              <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Pond Hill</th>
             </tr>
           </thead>
           <tbody>
@@ -102,7 +102,7 @@ export default getSiteProps(({ title }) => (
           <thead>
             <tr>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Hamilton</th>
-              <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Pond Road</th>
+              <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Pond Hill</th>
             </tr>
           </thead>
           <tbody>
@@ -155,6 +155,16 @@ export default getSiteProps(({ title }) => (
               <td className={css(tachyons('pv2 ph3'))}>-</td>
             </tr>
           </tbody>
+        </table>
+        <table
+          className={css(tachyons('collapse black ba br2 b--black-10 pv2 ph3 tc w-100 w-20-l'))}
+        >
+          <caption className={css(tachyons('f4 f3-ns pv2'))}>Sunday &amp; Holidays</caption>
+          <thead>
+            <tr>
+              <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>No Service</th>
+            </tr>
+          </thead>
         </table>
       </div>
     </busschedule>

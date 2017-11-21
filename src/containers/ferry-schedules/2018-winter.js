@@ -2,6 +2,7 @@ import React from 'react'
 import { getSiteProps, Head } from 'react-static'
 import { wrap, reset, tachyons } from 'glamor-tachyons'
 import { css, insertRule } from 'glamor'
+import g from 'glamorous'
 //
 reset({ insertRule })
 
@@ -13,18 +14,21 @@ const styles = wrap(
     table: 'collapse black ba br2 b--black-10 pv2 ph3 tc',
     th: 'f5 lh-copy fw6 pv2 ph3',
     td: 'pv2 ph3 nowrap',
-    blue:
-      'bg-blue f5 f4-ns lh-copy link dim ph3 pv2 mb2 mr1-l dib white tc w-100 w-auto-l flex-l items-center-l',
-    pink:
-      'bg-pink f5 f4-ns lh-copy link dim ph3 pv2 mb2 mr1-l dib white tc w-100 w-auto-l flex-l items-center-l',
-    green:
-      'bg-green f5 f4-ns lh-copy link dim ph3 pv2 mb2 mr1-l dib white tc w-100 w-auto-l flex-l items-center-l',
-    orange: 'bg-orange f5 f4-ns lh-copy ph3 pv2 mb2 mr1-l dib white tc w-100 w-auto-l',
   },
   css,
 )
 
-const CustomWidth100and45 = css({
+const BlueRoute = g.div(tachyons('bg-blue white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'))
+const BlueRouteButton = g.a(tachyons('bg-blue f5 f4-ns lh-copy link dim ph3 pv2 mb2 mr1-l dib white tc w-100 w-auto-l flex-l items-center-l'))
+const PinkRoute = g.div(tachyons('bg-pink white pv3 pv4-ns ph3 ph6-l flex flex-column items-center'))
+const PinkRouteButton = g.a(tachyons('bg-pink f5 f4-ns lh-copy link dim ph3 pv2 mb2 mr1-l dib white tc w-100 w-auto-l flex-l items-center-l'))
+const PinkRouteTable = g.table(tachyons('collapse bg-light-pink black ba br2 b--black-10 pv2 ph3 tc'))
+const GreenRoute = g.div(tachyons('bg-green white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'))
+const GreenRouteButton = g.a(tachyons('bg-green f5 f4-ns lh-copy link dim ph3 pv2 mb2 mr1-l dib white tc w-100 w-auto-l flex-l items-center-l'))
+const OrangeRouteDisabled = g.div(tachyons('bg-orange f5 f4-ns lh-copy ph3 pv2 mb2 mr1-l dib white tc w-100 w-auto-l'))
+const Fares = g.div(tachyons('bg-light-gray pv3 pv4-ns ph3 ph6-l flex flex-column flex-auto'))
+
+const TableWidth45 = g.div({
   width: '100%',
   '@media screen and (min-width: 60em)': {
     width: '45%',
@@ -96,25 +100,22 @@ export default getSiteProps(({ title }) => (
       </div>
       <p>Marine and Ports shall not be liable for loss or damage to property.</p>
       <div className={css(tachyons('flex flex-column flex-row-l pt3-l'))}>
-        <a className={styles.blue} href="#blueroute">
+        <BlueRouteButton href="#blueroute">
           Blue Route<br />Hamilton &bull; Dockyard
-        </a>
-        <a className={styles.pink} href="#pinkroute">
+        </BlueRouteButton>
+        <PinkRouteButton className={styles.pink} href="#pinkroute">
           Pink Route<br />Hamilton &bull; Paget &bull; Warwick
-        </a>
-        <a className={styles.green} href="#greenroute">
+        </PinkRouteButton>
+        <GreenRouteButton className={styles.green} href="#greenroute">
           Green Route<br />Hamilton &bull; Southampton &bull; Sandys
-        </a>
-        <div className={styles.orange} href="#orangeroute">
+        </GreenRouteButton>
+        <OrangeRouteDisabled href="#orangeroute">
           Orange Route<br />Dockyard &bull; St.&nbsp;George&rsquo;s
           <br />Services resumes April 2018
-        </div>
+        </OrangeRouteDisabled>
       </div>
     </section>
-    <fares
-      id="fares"
-      className={css(tachyons('bg-light-gray pv3 pv4-ns ph3 ph6-l flex flex-column flex-auto'))}
-    >
+    <Fares id="fares">
       <h1 className={css(tachyons('f2 lh-title'))}>Fare Information</h1>
       <div className={css(tachyons('lh-copy'))}>
         <p>Please ensure you have the correct fare before boarding.</p>
@@ -155,7 +156,7 @@ export default getSiteProps(({ title }) => (
         <li>Children under age 5</li>
       </ul>
       <div className={css(tachyons('flex flex-column flex-row-l justify-between'))}>
-        <div className={CustomWidth100and45}>
+        <TableWidth45>
           <h1 className={css(tachyons('f3 lh-copy'))}>Passes</h1>
           <table
             className={css(tachyons('collapse w-100 bg-white black ba br2 b--black-10 pv2 ph3 tc'))}
@@ -207,13 +208,13 @@ export default getSiteProps(({ title }) => (
               </tr>
             </tbody>
           </table>
-          <p className={css(tachyons('lh-copy'))}>
+          <div className={css(tachyons('lh-copy'))}>
             <strong>Student Passes</strong> (Residents Only) &bull; All Students must present a
             Student Pass for free transportation. If Student Pass not presented, child (Age 5 - 15)
             or Adult (Age 16+) fares apply.
-          </p>
-        </div>
-        <div className={CustomWidth100and45}>
+          </div>
+        </TableWidth45>
+        <TableWidth45>
           <h1 className={css(tachyons('f3 lh-copy'))}>Tickets/Tokens</h1>
           <h1 className={css(tachyons('f4 lh-title'))}>BLUE / GREEN / ORANGE ROUTE</h1>
           <div className={css(tachyons('w-100 overflow-scroll'))}>
@@ -322,25 +323,20 @@ export default getSiteProps(({ title }) => (
               </tr>
             </tbody>
           </table>
-        </div>
+        </TableWidth45>
       </div>
-    </fares>
-    <blueroute
-      id="blueroute"
-      className={css(
-        tachyons('bg-blue white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-aut'),
-      )}
-    >
+    </Fares>
+    <BlueRoute id="blueroute">
       <h1 className={css(tachyons('f3 lh-title tc mb0'))}>
         Blue Route<br />
         <hr />Hamilton &bull; Royal Naval Dockyard<hr />
       </h1>
       <div className={css(tachyons('measure flex flex-column'))}>
-        <p className={css(tachyons('lh-copy'))}>
+        <div className={css(tachyons('lh-copy'))}>
           The trip to the West End is one of the finest sightseeing cruises available anywhere! See
           a completely different aspect of the island on your way to the Royal Naval Dockyard, which
           is full of interesting things to do and places to eat and shop!
-        </p>
+        </div>
         <div className={css(tachyons('flex flex-row'))}>
           <svg
             className={css(tachyons('w-10'))}
@@ -361,9 +357,9 @@ export default getSiteProps(({ title }) => (
               d="M19.44 9.03L15.41 5H11v2h3.59l2 2H5c-2.8 0-5 2.2-5 5s2.2 5 5 5c2.46 0 4.45-1.69 4.9-4h1.65l2.77-2.77c-.21.54-.32 1.14-.32 1.77 0 2.8 2.2 5 5 5s5-2.2 5-5c0-2.65-1.97-4.77-4.56-4.97zM7.82 15C7.4 16.15 6.28 17 5 17c-1.63 0-3-1.37-3-3s1.37-3 3-3c1.28 0 2.4.85 2.82 2H5v2h2.82zM19 17c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"
             />
           </svg>
-          <div className={css(tachyons('pl2 w-90 lh-copy'))}>
+          <p className={css(tachyons('pl2 w-90 lh-copy'))}>
             Motor cycles may embark at Hamilton &amp; Dockyard.
-          </div>
+          </p>
         </div>
         <div className={css(tachyons('pv2 flex flex-row'))}>
           <svg
@@ -378,9 +374,9 @@ export default getSiteProps(({ title }) => (
             <circle cx="12" cy="4" r="2" />
             <path d="M19 13v-2c-1.54.02-3.09-.75-4.07-1.83l-1.29-1.43c-.17-.19-.38-.34-.61-.45-.01 0-.01-.01-.02-.01H13c-.35-.2-.75-.3-1.19-.26C10.76 7.11 10 8.04 10 9.09V15c0 1.1.9 2 2 2h5v5h2v-5.5c0-1.1-.9-2-2-2h-3v-3.45c1.29 1.07 3.25 1.94 5 1.95zm-6.17 5c-.41 1.16-1.52 2-2.83 2-1.66 0-3-1.34-3-3 0-1.31.84-2.41 2-2.83V12.1c-2.28.46-4 2.48-4 4.9 0 2.76 2.24 5 5 5 2.42 0 4.44-1.72 4.9-4h-2.07z" />
           </svg>
-          <div className={css(tachyons('w-90 pl2 lh-copy'))}>
+          <p className={css(tachyons('w-90 pl2 lh-copy'))}>
             Accessible to persons with disability
-          </div>
+          </p>
         </div>
       </div>
       <table
@@ -479,11 +475,8 @@ export default getSiteProps(({ title }) => (
           </tr>
         </tbody>
       </table>
-    </blueroute>
-    <pinkroute
-      id="pinkroute"
-      className={css(tachyons('bg-pink white pv3 pv4-ns ph3 ph6-l flex flex-column items-center'))}
-    >
+    </BlueRoute>
+    <PinkRoute id="pinkroute">
       <h1 className={css(tachyons('f3 lh-title tc mb0'))}>
         Pink Route<br />
         <hr />Hamilton &bull; Paget &bull; Warwick<hr />
@@ -498,9 +491,7 @@ export default getSiteProps(({ title }) => (
       <div
         className={css(tachyons('w-100 overflow-scroll flex-ns flex-column-ns items-center-ns'))}
       >
-        <table
-          className={css(tachyons('collapse bg-light-pink black ba br2 b--black-10 pv2 ph3 tc'))}
-        >
+        <PinkRouteTable>
           <caption className={css(tachyons('white f3 f4-ns pv2'))}>Monday - Friday</caption>
           <thead>
             <tr>
@@ -650,13 +641,11 @@ export default getSiteProps(({ title }) => (
               <td className={css(tachyons('pv2 ph3 nowrap-ns nowrap'))}>8:35 PM</td>
             </tr>
           </tbody>
-        </table>
-        <table
-          className={css(tachyons('collapse bg-light-pink black ba br2 b--black-10 pv2 ph3 tc'))}
-        >
+        </PinkRouteTable>
+        <PinkRouteTable>
           <caption className={css(tachyons('white f3 f4-ns pv2'))}>Saturdays</caption>
           <thead>
-            <tr className={css(tachyons(''))}>
+            <tr>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3-ns'))}>Leave Hamilton</th>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3-ns'))}>Lower Ferry</th>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3-ns'))}>Hodsdon&rsquo;s Ferry</th>
@@ -740,10 +729,8 @@ export default getSiteProps(({ title }) => (
               <td className={css(tachyons('pv2 ph3 nowrap-ns nowrap'))}>6:40 PM</td>
             </tr>
           </tbody>
-        </table>
-        <table
-          className={css(tachyons('collapse bg-light-pink black ba br2 b--black-10 pv2 ph3 tc'))}
-        >
+        </PinkRouteTable>
+        <PinkRouteTable>
           <caption className={css(tachyons('white f3 f4-ns pv2'))}>
             Sundays and Public Holidays
           </caption>
@@ -823,15 +810,10 @@ export default getSiteProps(({ title }) => (
               <td className={css(tachyons('pv2 ph3 nowrap-ns nowrap'))}>6:40 PM</td>
             </tr>
           </tbody>
-        </table>
+        </PinkRouteTable>
       </div>
-    </pinkroute>
-    <greenroute
-      id="greenroute"
-      className={css(
-        tachyons('bg-green white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
-      )}
-    >
+    </PinkRoute>
+    <GreenRoute id="greenroute">
       <h1 className={css(tachyons('f3 lh-title tc mb0'))}>
         Green Route<br />
         <hr />Hamilton &bull; Watford Bridge &bull; Cavello Bay &bull; Rockaway<hr />
@@ -856,9 +838,9 @@ export default getSiteProps(({ title }) => (
             <circle cx="12" cy="4" r="2" />
             <path d="M19 13v-2c-1.54.02-3.09-.75-4.07-1.83l-1.29-1.43c-.17-.19-.38-.34-.61-.45-.01 0-.01-.01-.02-.01H13c-.35-.2-.75-.3-1.19-.26C10.76 7.11 10 8.04 10 9.09V15c0 1.1.9 2 2 2h5v5h2v-5.5c0-1.1-.9-2-2-2h-3v-3.45c1.29 1.07 3.25 1.94 5 1.95zm-6.17 5c-.41 1.16-1.52 2-2.83 2-1.66 0-3-1.34-3-3 0-1.31.84-2.41 2-2.83V12.1c-2.28.46-4 2.48-4 4.9 0 2.76 2.24 5 5 5 2.42 0 4.44-1.72 4.9-4h-2.07z" />
           </svg>
-          <div className={css(tachyons('w-90 pl2 lh-copy'))}>
+          <p className={css(tachyons('w-90 pl2 lh-copy'))}>
             Accessible to persons with disability
-          </div>
+          </p>
         </div>
       </div>
       <div
@@ -923,6 +905,6 @@ export default getSiteProps(({ title }) => (
           </tbody>
         </table>
       </div>
-    </greenroute>
+    </GreenRoute>
   </div>
 ))

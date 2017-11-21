@@ -2,8 +2,13 @@ import React from 'react'
 import { getSiteProps, Head } from 'react-static'
 import { reset, tachyons } from 'glamor-tachyons'
 import { css, insertRule } from 'glamor'
+import glamorous from 'glamorous'
 //
 reset({ insertRule })
+
+const BusSchedule = glamorous.div(
+  tachyons('bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto'),
+)
 
 export default getSiteProps(({ title }) => (
   <div>
@@ -30,7 +35,7 @@ export default getSiteProps(({ title }) => (
           <thead>
             <tr>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Hamilton</th>
-              <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Grotto Bay</th>
+              <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave St. George&rsquo;s</th>
             </tr>
           </thead>
           <tbody>
@@ -71,7 +76,7 @@ export default getSiteProps(({ title }) => (
           <thead>
             <tr>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Hamilton</th>
-              <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Grotto Bay</th>
+              <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave St. George&rsquo;s</th>
             </tr>
           </thead>
           <tbody>
@@ -114,9 +119,9 @@ export default getSiteProps(({ title }) => (
         >
           <caption className={css(tachyons('f4 f3-ns pv2'))}>Sunday &amp; Holidays</caption>
           <thead>
-            <tr className={css(tachyons(''))}>
+            <tr>
               <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Hamilton</th>
-              <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave Grotto Bay</th>
+              <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>Leave St. George&rsquo;s</th>
             </tr>
           </thead>
           <tbody>
@@ -155,7 +160,7 @@ export default getSiteProps(({ title }) => (
         <h4 className={css(tachyons('f4 fw6'))}>Notes</h4>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
           <dt className={css(tachyons('dib b'))}>hs</dt>
-          <dd className={css(tachyons('dib ml0 gray'))}>
+          <dd className={css(tachyons('dib ml1 gray'))}>
             Trip operates via Harrington Sound School route; does not serve South Road between
             Devil&rsquo;s Hole and Collectors Hill.
           </dd>
