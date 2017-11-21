@@ -5140,9 +5140,9 @@ react-side-effect@^1.1.0:
     exenv "^1.2.1"
     shallowequal "^1.0.1"
 
-react-static@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/react-static/-/react-static-4.3.0.tgz#2420f033ea4097c1eb3b9b107a28aaa85475542b"
+react-static@^4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/react-static/-/react-static-4.3.2.tgz#375c15aae506fbe7b44516329dfcbbf7267dc0a6"
   dependencies:
     "@types/react" "^16.0.18"
     "@types/react-helmet" "^5.0.3"
