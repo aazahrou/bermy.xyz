@@ -1,5 +1,5 @@
 import React from 'react'
-import { getSiteProps } from 'react-static'
+import { getSiteProps, Head } from 'react-static'
 import { wrap, reset, tachyons } from 'glamor-tachyons'
 import { css, insertRule } from 'glamor'
 //
@@ -28,8 +28,12 @@ const CustomWidth100and45 = css({
   },
 })
 
-export default getSiteProps(() => (
+export default getSiteProps(({ title }) => (
   <div>
+    <Head>
+      <title>{title} | Ferry Schedules</title>
+      <meta name="description" content="Bermuda ferry schedules" />
+    </Head>
     <section className={styles.section}>
       <div className={css(tachyons('tc'))}>
         <h1 className={styles.h1}>
@@ -1043,6 +1047,5 @@ export default getSiteProps(() => (
         </tbody>
       </table>
     </orangeroute>
-
   </div>
 ))

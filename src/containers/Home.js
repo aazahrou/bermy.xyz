@@ -1,5 +1,5 @@
 import React from 'react'
-import { getSiteProps, Link } from 'react-static'
+import { getSiteProps, Head, Link } from 'react-static'
 import { wrap, reset, tachyons } from 'glamor-tachyons'
 import { css, insertRule } from 'glamor'
 //
@@ -17,8 +17,12 @@ const styles = wrap(
   css,
 )
 
-export default getSiteProps(() => (
+export default getSiteProps(({ title }) => (
   <section className={styles.section}>
+    <Head>
+      <title>{title} | Bermuda bus and ferry schedules</title>
+      <meta name="description" content="Bermuda bus and ferry schedules" />
+    </Head>
     <div className={styles.flex_center}>
       <article className={styles.article}>
         <div className={css(tachyons('tc'))}>
