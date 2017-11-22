@@ -467,11 +467,11 @@ export default getSiteProps(({ title }) => (
               </tr>
             </tbody>
           </table>
-          <div className={css(tachyons('lh-copy'))}>
+          <p className={css(tachyons('lh-copy'))}>
             <strong>Student Passes</strong> (Residents Only) &bull; All Students must present a
             Student Pass for free transportation. If Student Pass not presented, child (Age 5 - 15)
             or Adult (Age 16+) fares apply.
-          </div>
+          </p>
         </TableWidth45>
         <TableWidth45>
           <h1 className={css(tachyons('f3 lh-copy'))}>Tickets/Tokens</h1>
