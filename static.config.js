@@ -132,7 +132,16 @@ export default {
             <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
             <link rel="manifest" href="/manifest.json" />
             <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5f3a96" />
-            <style dangerouslySetInnerHTML={{ __html: renderMeta.glamStyles }} />
+
+            <style type="text/css">{`
+              body {
+                font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+                helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui,
+                arial, sans-serif;
+                padding: 0;
+                margin: 0;
+              }
+            `}</style>
           </Head>
           <Body>{children}</Body>
         </Html>
