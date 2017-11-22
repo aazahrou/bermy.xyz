@@ -88,15 +88,21 @@ export default {
   getSiteProps: () => ({
     title: 'Bermy.xyz',
   }),
-  renderToHtml: async (render, Comp) => render(<Comp />),
+  renderToHtml: async (render, Comp, meta) => {
+    const html = render(<Comp />)
+    const { css } = renderStaticOptimized(() => html)
+    meta.glamStyles = css
+    return html
+  },
   siteRoot: 'https://bermy.xyz',
   Document: class CustomDocument extends Component {
     render () {
-      const { Html, Head, Body, children } = this.props
+      const { Html, Head, Body, children, renderMeta } = this.props
 
       return (
         <Html>
           <Head>
+            <title>.</title>
             <meta charSet="UTF-8" />
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -128,6 +134,7 @@ export default {
             <link rel="manifest" href="/manifest.json" />
             <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5f3a96" />
 
+            <style dangerouslySetInnerHTML={{ __html: renderMeta.glamStyles }} />
             <style type="text/css">{`
               body {
                 font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
