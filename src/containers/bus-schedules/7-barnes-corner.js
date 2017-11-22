@@ -23,7 +23,7 @@ export default getSiteProps(({ title }) => (
     >
       <h1 className={css(tachyons('f3 f1-ns lh-copy tc'))}>
         7 &bull; Hamilton &bull; Barnes Corner
-        <p className={css(tachyons('f5 f4-ns'))}>via South Shore Beaches 🏖</p>
+        <p className={css(tachyons('f5 f4-ns'))}>via South Shore Beaches</p>
       </h1>
       <div className={css(tachyons('flex flex-column flex-row-l justify-around w-100'))}>
         <table

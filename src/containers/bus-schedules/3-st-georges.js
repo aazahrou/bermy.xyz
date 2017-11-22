@@ -1,5 +1,5 @@
 import React from 'react'
-import { getSiteProps, Head } from 'react-static'
+import { getSiteProps, Head, Link } from 'react-static'
 import { reset, tachyons } from 'glamor-tachyons'
 import { css, insertRule } from 'glamor'
 import glamorous from 'glamorous'
@@ -82,6 +82,28 @@ export default getSiteProps(({ title }) => (
             <tr className={css(tachyons('striped--light-gray'))}>
               <td className={css(tachyons('pv2 ph3'))}>4:45 PM</td>
               <td className={css(tachyons('pv2 ph3'))}>-</td>
+            </tr>
+          </tbody>
+        </table>
+        <table
+          className={css(tachyons('collapse black ba br2 b--black-10 pv2 ph3 tc w-100 w-33-l'))}
+        >
+          <caption className={css(tachyons('f4 f3-ns pv2'))}>Saturdays</caption>
+          <thead>
+            <tr>
+              <th className={css(tachyons('f5 lh-copy fw6 pv2 ph3'))}>
+                For more Saturday service see timetable for route {' '}
+                <Link to="/buses/3-grotto-bay" className={css(tachyons('link dim'))}>
+                  3&nbsp;&bull;&nbsp;Hamilton&nbsp;&bull;&nbsp;Grotto&nbsp;Bay
+                </Link>.
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className={css(tachyons('striped--light-gray'))}>
+              <td className={css(tachyons('pv2 ph3'))}>
+                Connections are available at Grotto Bay to/from St. George&rsquo;s
+              </td>
             </tr>
           </tbody>
         </table>
