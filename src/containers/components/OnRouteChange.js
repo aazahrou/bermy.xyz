@@ -2,7 +2,7 @@ import React from 'react'
 import { withRouter } from 'react-router-dom'
 import ReactGA from 'react-ga'
 
-ReactGA.initialize('UA-110004353-1', { debug: true })
+ReactGA.initialize('UA-110004353-1')
 
 class OnRouteChange extends React.Component {
   componentDidUpdate (prevProps) {
