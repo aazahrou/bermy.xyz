@@ -88,16 +88,11 @@ export default {
   getSiteProps: () => ({
     title: 'Bermy.xyz',
   }),
-  renderToHtml: async (render, Comp, meta) => {
-    const html = render(<Comp />)
-    const { css } = renderStaticOptimized(() => html)
-    meta.glamStyles = css
-    return html
-  },
+  renderToHtml: async (render, Comp) => render(<Comp />),
   siteRoot: 'https://bermy.xyz',
   Document: class CustomDocument extends Component {
     render () {
-      const { Html, Head, Body, children, renderMeta } = this.props
+      const { Html, Head, Body, children } = this.props
 
       return (
         <Html>

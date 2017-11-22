@@ -40,10 +40,6 @@ export default () => (
                 height="60"
                 viewBox="0 0 636.07 195.85"
               >
-                <defs>
-                  <style />
-                </defs>
-                <title>Bermy.xyz</title>
                 <g data-name="Layer 2">
                   <g data-name="Layer 1">
                     <path
@@ -96,10 +92,6 @@ export default () => (
                 height="80"
                 viewBox="0 0 636.07 195.85"
               >
-                <defs>
-                  <style />
-                </defs>
-                <title>Bermy.xyz</title>
                 <g data-name="Layer 2">
                   <g data-name="Layer 1">
                     <path
@@ -192,7 +184,6 @@ export default () => (
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 533.67 221.46"
             >
-              <title>Jelly!</title>
               <g data-name="Layer 2">
                 <g data-name="Layer 1">
                   <path d="M101,66a8,8,0,1,1-8,8,8,8,0,0,1,8-8" />
