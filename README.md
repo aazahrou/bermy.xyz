@@ -13,7 +13,7 @@ Bermy.xyz is easy to remember and friendly for mobile commuters.
 
 - Schedules in accordance to [General Transit Feed Specification](https://developers.google.com/transit/gtfs/)
 - Rethink how to display bus routes 1, 3, 7 and 8
-- Routes based on time and location. Display availability and in correct direction
+- Routes based on time and location. Display availability and in correct direction. Incorporate average bus times.
 - Interactive map of bus and ferry routes
 
 ### Other Ideas
