@@ -6,7 +6,8 @@ ReactGA.initialize('UA-110004353-1')
 
 class OnRouteChange extends React.Component {
   componentDidUpdate (prevProps) {
-    if (this.props.location !== prevProps.location) {
+    // match on pathname, otherwise this breaks when using #anchor tags
+    if (this.props.location.pathname !== prevProps.location.pathname) {
       // Scroll To Top
       window.scrollTo(0, 0)
       // Track via Google Analytics
