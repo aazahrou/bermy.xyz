@@ -1,6 +1,7 @@
 {
-  "name": "react-static-starter",
+  "name": "bermy.xyz",
   "version": "1.0.0",
+  "description": "Bermuda bus and ferry schedules",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -13,8 +14,8 @@
     "glamor-tachyons": "^1.0.0-alpha.1",
     "glamorous": "^4.11.0",
     "prop-types": "^15.6.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
     "react-ga": "^2.3.5",
     "react-router": "^4.2.0",
     "react-static": "^4.3.2"
