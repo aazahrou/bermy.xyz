@@ -21,3 +21,7 @@ Bermy.xyz is easy to remember and friendly for mobile commuters.
 - Progressive Web App
 - Weather Information
 - Mobile apps built with React Native
+
+## License
+
+See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
