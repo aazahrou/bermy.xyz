@@ -94,7 +94,7 @@ export default {
     meta.glamStyles = css
     return html
   },
-  // siteRoot: 'https://bermy.xyz',
+  siteRoot: 'https://bermy.xyz',
   Document: class CustomDocument extends Component {
     render () {
       const { Html, Head, Body, children, renderMeta } = this.props
