@@ -13,7 +13,7 @@ const BusSchedule = glamorous.div(
 export default getSiteProps(({ title }) => (
   <div>
     <Head>
-      <title>1 • Hamilton • St. George's | {title}</title>
+      <title>{`1 • Hamilton • St. George's | ${title}`}</title>
       <meta name="description" content="Bermuda bus schedule: 1 • Hamilton • St. George's" />
     </Head>
     <busschedule

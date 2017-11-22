@@ -31,8 +31,8 @@ const CustomWidth100and45 = css({
 export default getSiteProps(({ title }) => (
   <div>
     <Head>
-      <title>{title} | Ferry Schedules</title>
-      <meta name="description" content="Bermuda ferry schedules" />
+      <title>{`Summer Ferry Schedule | ${title}`}</title>
+      <meta name="description" content="Bermuda summer ferry schedule" />
     </Head>
     <section className={styles.section}>
       <div className={css(tachyons('tc'))}>

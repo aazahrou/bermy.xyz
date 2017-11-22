@@ -17,7 +17,7 @@ const AverageTimes = glamorous.div(
 export default getSiteProps(({ title }) => (
   <div>
     <Head>
-      <title>4 • Hamilton • Spanish Point | {title}</title>
+      <title>{`4 • Hamilton • Spanish Point | ${title}`}</title>
       <meta name="description" content="Bermuda bus schedule: 4 • Hamilton • Spanish Point" />
     </Head>
     <BusSchedule

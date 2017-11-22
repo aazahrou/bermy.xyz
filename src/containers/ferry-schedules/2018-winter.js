@@ -38,7 +38,7 @@ const TableWidth45 = g.div({
 export default getSiteProps(({ title }) => (
   <div>
     <Head>
-      <title>{title} | Winter Ferry Schedule</title>
+      <title>{`Winter Ferry Schedule | ${title}`}</title>
       <meta name="description" content="Bermuda winter ferry schedule" />
     </Head>
     <section className={styles.section}>

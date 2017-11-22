@@ -17,7 +17,7 @@ const AverageTimes = glamorous.div(
 export default getSiteProps(({ title }) => (
   <div>
     <Head>
-      <title>6 • St. George's • St. David's | {title}</title>
+      <title>{`6 • St. George's • St. David's | ${title}`}</title>
       <meta name="description" content="Bermuda bus schedule: 6 • St. George's • St. David's" />
     </Head>
     <BusSchedule
@@ -325,7 +325,8 @@ export default getSiteProps(({ title }) => (
         <dl className={css(tachyons('f5 lh-title mv2'))}>
           <dt className={css(tachyons('dib b'))}>HT</dt>
           <dd className={css(tachyons('dib ml1 gray'))}>
-          On school days, trip operates to Warwick via Collector's Hill. On other days, trip operates to Hamilton via Route 11.
+            On school days, trip operates to Warwick via Collector's Hill. On other days, trip
+            operates to Hamilton via Route 11.
           </dd>
         </dl>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
@@ -334,9 +335,7 @@ export default getSiteProps(({ title }) => (
         </dl>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
           <dt className={css(tachyons('dib b'))}>MR</dt>
-          <dd className={css(tachyons('dib ml1 gray'))}>
-            Main Road (St. David's Road).
-          </dd>
+          <dd className={css(tachyons('dib ml1 gray'))}>Main Road (St. David's Road).</dd>
         </dl>
         <dl className={css(tachyons('f5 lh-title mv2'))}>
           <dt className={css(tachyons('dib b'))}>SS</dt>

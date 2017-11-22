@@ -8,7 +8,7 @@ reset({ insertRule })
 export default getSiteProps(({ title }) => (
   <div>
     <Head>
-      <title>2 • Hamilton • Ord Road | {title}</title>
+      <title>{`2 • Hamilton • Ord Road | ${title}`}</title>
       <meta name="description" content="Bermuda bus schedule: 2 • Hamilton • Ord Road" />
     </Head>
     <busschedule

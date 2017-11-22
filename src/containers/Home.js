@@ -20,7 +20,7 @@ const styles = wrap(
 export default getSiteProps(({ title }) => (
   <section className={styles.section}>
     <Head>
-      <title>{title} | Bermuda bus and ferry schedules</title>
+      <title>{`${title} | Bermuda bus and ferry schedules`}</title>
       <meta name="description" content="Bermuda bus and ferry schedules" />
     </Head>
     <div className={styles.flex_center}>
