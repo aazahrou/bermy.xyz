@@ -1,6 +1,8 @@
 /* eslint-disable react/no-danger */
 import React, { Component } from 'react'
 import { renderStaticOptimized } from 'glamor/server'
+import ManifestPlugin from 'webpack-manifest-plugin'
+import SWPrecacheWebpackPlugin from 'sw-precache-webpack-plugin'
 
 export default {
   getRoutes: async () => [
@@ -108,10 +110,7 @@ export default {
             <meta name="theme-color" content="#ffffff" />
 
             <meta property="og:image" content="/img/bermy.xyz.preview.png" />
-            <meta
-              property="og:description"
-              content="Bermuda bus and ferry schedules 🇧🇲 🚌 ⛴ 🕑"
-            />
+            <meta property="og:description" content="Bermuda bus and ferry schedules 🇧🇲 🚌 ⛴ 🕑" />
             <meta property="og:site_name" content="Bermy.xyz" />
             <meta property="og:title" content="Bermy.xyz" />
             <meta property="og:image:height" content="255" />
@@ -121,10 +120,7 @@ export default {
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:creator" content="@muloka" />
             <meta name="twitter:title" content="Bermy.xyz" />
-            <meta
-              name="twitter:description"
-              content="Bermuda bus and ferry schedules 🇧🇲 🚌 ⛴ 🕑"
-            />
+            <meta name="twitter:description" content="Bermuda bus and ferry schedules 🇧🇲 🚌 ⛴ 🕑" />
             <meta name="twitter:image:src" content="/img/bermy.xyz.preview.png" />
 
             <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -145,8 +141,34 @@ export default {
             `}</style>
           </Head>
           <Body>{children}</Body>
+          <noscript>Your browser does not support JavaScript!</noscript>
         </Html>
       )
     }
+  },
+  webpack: config => {
+    config.plugins.push(new ManifestPlugin({ fileName: 'asset-manifest.json' }))
+    config.plugins.push(
+      new SWPrecacheWebpackPlugin({
+        // By default, a cache-busting query parameter is appended to requests
+        // used to populate the caches, to ensure the responses are fresh.
+        // If a URL is already hashed by Webpack, then there is no concern
+        // about it being stale, and the cache-busting can be skipped.
+        dontCacheBustUrlsMatching: /\.\w{8}\./,
+        filename: 'service-worker.js',
+        logger (message) {
+          if (message.indexOf('Total precache size is') === 0) {
+            // This message occurs for every build and is a bit too noisy.
+            return
+          }
+          console.log(message)
+        },
+        minify: true, // minify and uglify the script
+        navigateFallback: '/index.html',
+        staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
+      }),
+    )
+
+    return config
   },
 }

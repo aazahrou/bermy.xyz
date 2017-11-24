@@ -5,6 +5,8 @@ import { AppContainer } from 'react-hot-loader'
 // Your top level component
 import App from './App'
 
+import serviceWorkerRegistration from './service-worker-registration'
+
 // Export your top level component (for static rendering)
 export default App
 
@@ -21,6 +23,8 @@ if (typeof document !== 'undefined') {
 
   // Render!
   render(App)
+
+  serviceWorkerRegistration()
 
   // Hot Module Replacement
   if (module.hot) {
