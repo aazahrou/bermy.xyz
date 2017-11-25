@@ -161,11 +161,16 @@ export default {
             // This message occurs for every build and is a bit too noisy.
             return
           }
+          if (message.indexOf('Skipping static resource') === 0) {
+            // This message obscures real errors so we ignore it.
+            return
+          }
           console.log(message)
         },
         minify: true, // minify and uglify the script
         // navigateFallback: '/index.html',
         // navigateFallbackWhitelist: [/^(?!\/__).*/],
+        // Don't precache sourcemaps (they're large) and build asset manifest:
         staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
       }),
     )
