@@ -164,7 +164,8 @@ export default {
           console.log(message)
         },
         minify: true, // minify and uglify the script
-        navigateFallback: '/index.html',
+        // navigateFallback: '/index.html',
+        // navigateFallbackWhitelist: [/^(?!\/__).*/],
         staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
       }),
     )
