@@ -8,22 +8,19 @@ reset({ insertRule })
 const styles = wrap(
   {
     h1: 'f3 flex flex-column',
-    flex_center: 'flex flex-column flex-row-ns items-center justify-around',
-    section: 'bg-white pv3 pv4-ns ph3 ph6-l flex flex-column flex-auto',
     article: 'bg-near-white mw5 br3 pa3 pa4-ns mv3 ba b--black-10',
     link_black: 'link dim black',
-    link_white_large: 'link dim white dn di-l',
   },
   css,
 )
 
 export default getSiteProps(({ title }) => (
-  <section className={styles.section}>
+  <section className={css(tachyons('bg-white pv3 pv4-ns ph3 ph6-l flex flex-column flex-auto'))}>
     <Head>
       <title>{`${title} | Bermuda bus and ferry schedules`}</title>
       <meta name="description" content="Bermuda bus and ferry schedules" />
     </Head>
-    <div className={styles.flex_center}>
+    <div className={css(tachyons('flex flex-column flex-row-ns items-center justify-around'))}>
       <article className={styles.article}>
         <div className={css(tachyons('tc'))}>
           <h1 className={styles.h1}>
@@ -58,6 +55,36 @@ export default getSiteProps(({ title }) => (
                 <path d="M20 21c-1.39 0-2.78-.47-4-1.32-2.44 1.71-5.56 1.71-8 0C6.78 20.53 5.39 21 4 21H2v2h2c1.38 0 2.74-.35 4-.99 2.52 1.29 5.48 1.29 8 0 1.26.65 2.62.99 4 .99h2v-2h-2zM3.95 19H4c1.6 0 3.02-.88 4-2 .98 1.12 2.4 2 4 2s3.02-.88 4-2c.98 1.12 2.4 2 4 2h.05l1.89-6.68c.08-.26.06-.54-.06-.78s-.34-.42-.6-.5L20 10.62V6c0-1.1-.9-2-2-2h-3V1H9v3H6c-1.1 0-2 .9-2 2v4.62l-1.29.42c-.26.08-.48.26-.6.5s-.15.52-.06.78L3.95 19zM6 6h12v3.97L12 8 6 9.97V6z" />
               </svg>
               <div>Ferry Schedules</div>
+            </Link>
+          </h1>
+        </div>
+      </article>
+      <article className={styles.article}>
+        <div className={css(tachyons('tc'))}>
+          <h1 className={styles.h1}>
+            <Link to="/favorites" className={styles.link_black}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                version="1.1"
+                height="128"
+                x="0px"
+                y="0px"
+                viewBox="0 0 100 125"
+              >
+                <g transform="translate(0,-952.36218)">
+                  <path
+                    d="m 468.46027,170.91117 -18.34463,-38.67976 -42.45544,-5.49407 31.11784,-29.399478 -7.89428,-42.075287 37.5765,20.509884 37.57651,-20.509886 -7.89428,42.075285 31.11784,29.399482 -42.45544,5.49407 z"
+                    transform="matrix(-0.69078871,0,0,-0.69175069,373.60706,1080.5901)"
+                    fill="#000000"
+                    stroke="none"
+                    marker="none"
+                    visibility="visible"
+                    display="inline"
+                    overflow="visible"
+                  />
+                </g>
+              </svg>
+              <div>Tourist Favorites</div>
             </Link>
           </h1>
         </div>

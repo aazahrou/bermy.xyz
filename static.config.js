@@ -83,6 +83,10 @@ export default {
       component: 'src/containers/ferry-schedules/2018-winter.js',
     },
     {
+      path: '/favorites',
+      component: 'src/containers/Favorites.js',
+    },
+    {
       is404: true,
       component: 'src/containers/404',
     },
