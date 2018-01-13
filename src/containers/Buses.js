@@ -86,6 +86,23 @@ export default getSiteProps(({ title }) => (
         </tfoot>
       </table>
       <p>
+        <a
+          href="https://www.gov.bm/bus-alerts"
+          target="_blank"
+          rel="noopener"
+          className={css(tachyons('lh-copy link dim white bg-blue ph3 pv2 mb2 w-100 w-auto-l'))}
+        >
+          Information on potential delays{' '}
+          <span role="img" aria-label="hourglass">
+            ⏳
+          </span>{' '}
+          and cancellations{' '}
+          <span role="img" aria-label="cancel">
+            🚫
+          </span>
+        </a>
+      </p>
+      <p>
         The Department of Public Transportation does not assume responsibility for lost property.
       </p>
       <dl className={css(tachyons('f5 lh-title mv2'))}>

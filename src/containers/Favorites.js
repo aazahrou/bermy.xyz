@@ -54,7 +54,7 @@ export default getSiteProps(({ title }) => (
         <tbody>
           <tr className={css(tachyons('striped--light-gray'))}>
             <td className={css(tachyons('pv2 ph3'))}>
-              <span role="img" aria-label="">
+              <span role="img" aria-label="golf">
                 ⛳️
               </span>
             </td>
@@ -71,7 +71,7 @@ export default getSiteProps(({ title }) => (
           </tr>
           <tr className={css(tachyons('striped--light-gray'))}>
             <td className={css(tachyons('pv2 ph3'))}>
-              <span role="img" aria-label="">
+              <span role="img" aria-label="fish">
                 🐠
               </span>
             </td>
@@ -88,7 +88,7 @@ export default getSiteProps(({ title }) => (
           </tr>
           <tr className={css(tachyons('striped--light-gray'))}>
             <td className={css(tachyons('pv2 ph3'))}>
-              <span role="img" aria-label="">
+              <span role="img" aria-label="art">
                 🖼
               </span>
             </td>
@@ -108,7 +108,7 @@ export default getSiteProps(({ title }) => (
           </tr>
           <tr className={css(tachyons('striped--light-gray'))}>
             <td className={css(tachyons('pv2 ph3'))}>
-              <span role="img" aria-label="">
+              <span role="img" aria-label="fish">
                 🐡
               </span>
             </td>
