@@ -29,7 +29,7 @@ export default getSiteProps(({ title }) => (
       </h1>
       <div className={css(tachyons('flex flex-column flex-row-l justify-around w-100'))}>
         <table
-          className={css(tachyons('collapse black ba br2 b--black-10 pv2 ph3 tc w-100 w-auto-l'))}
+          className={css(tachyons('collapse black ba br2 b--black-10 pv2 ph3 tc w-100 w-33-l'))}
         >
           <caption className={css(tachyons('f4 f3-ns pv2'))}>Monday to Friday</caption>
           <thead>
@@ -207,7 +207,7 @@ export default getSiteProps(({ title }) => (
           </tbody>
         </table>
         <table
-          className={css(tachyons('collapse black ba br2 b--black-10 pv2 ph3 tc w-100 w-auto-l'))}
+          className={css(tachyons('collapse black ba br2 b--black-10 pv2 ph3 tc w-100 w-30-l'))}
         >
           <caption className={css(tachyons('f4 f3-ns pv2'))}>Saturday</caption>
           <thead>
@@ -361,7 +361,7 @@ export default getSiteProps(({ title }) => (
           </tbody>
         </table>
         <table
-          className={css(tachyons('collapse black ba br2 b--black-10 pv2 ph3 tc w-100 w-auto-l'))}
+          className={css(tachyons('collapse black ba br2 b--black-10 pv2 ph3 tc w-100 w-33-l'))}
         >
           <caption className={css(tachyons('f4 f3-ns pv2'))}>Sunday &amp; Holidays</caption>
           <thead>

@@ -9,6 +9,8 @@ reset({ insertRule })
 const styles = wrap(
   {
     section: 'bg-white pv3 pv4-ns ph3 ph6-l flex flex-column items-center flex-auto',
+    route_link: 'pa1 mb2 bg-blue white link dim',
+    route_cell: 'pv2 ph3 flex flex-auto flex-column',
   },
   css,
 )
@@ -22,9 +24,22 @@ export default getSiteProps(({ title }) => (
     <section className={styles.section}>
       <h1 className={css(tachyons('f3 f1-ns lh-copy tc'))}>Tourist Favorites</h1>
       <p>
-        Poles that are pink indicate service inbound to the City of Hamilton. Poles that are blue
-        indicate service outbound from the City of Hamilton.
+        The table below lists many of the destinations that visitors ask about most frequently.
+        Alongside each destination is the number of the route(s) or ferry serving that destination
+        and the appropriate Fare Zone.
       </p>
+      <dl className={css(tachyons('f5 lh-title mv2'))}>
+        <dt className={css(tachyons('dib pa1 white bg-pink'))}>Pink poles</dt>
+        <dd className={css(tachyons('dib ml1'))}>
+          indicate service <strong>inbound</strong> to the City of Hamilton
+        </dd>
+      </dl>
+      <dl className={css(tachyons('f5 lh-title mv2'))}>
+        <dt className={css(tachyons('dib pa1 white bg-blue'))}>Blue poles</dt>
+        <dd className={css(tachyons('dib ml1'))}>
+          indicate service <strong>outbound</strong> from the City of Hamilton
+        </dd>
+      </dl>
       <table
         className={css(tachyons('collapse black ba br2 b--black-10 pv2 ph3 tc w-100 w-auto-l'))}
       >
@@ -41,12 +56,15 @@ export default getSiteProps(({ title }) => (
             <td className={css(tachyons('pv2 ph3'))}>
               <span role="img" aria-label="">
                 ⛳️
-              </span>{' '}
+              </span>
             </td>
             <td className={css(tachyons('tl pv2 ph3'))}>Belmont Hills Golf Club</td>
-            <td className={css(tachyons('pv2 ph3'))}>
-              <Link to="/buses/8-dockyard" className={css(tachyons('link dim'))}>
-                8
+            <td className={styles.route_cell}>
+              <Link to="/buses/8-dockyard" className={styles.route_link}>
+                8 Dockyard
+              </Link>{' '}
+              <Link to="/buses/8-somerset" className={styles.route_link}>
+                8 Somerset
               </Link>
             </td>
             <td className={css(tachyons('pv2 ph3'))}>3 Zone</td>
@@ -55,27 +73,36 @@ export default getSiteProps(({ title }) => (
             <td className={css(tachyons('pv2 ph3'))}>
               <span role="img" aria-label="">
                 🐠
-              </span>{' '}
+              </span>
             </td>
             <td className={css(tachyons('tl pv2 ph3'))}>Bermuda Aquarium, Museum & Zoo</td>
-            <td className={css(tachyons('pv2 ph3'))}>10, 11</td>
+            <td className={styles.route_cell}>
+              <Link to="/buses/10-st-georges" className={styles.route_link}>
+                10 St. George&rsquo;s
+              </Link>{' '}
+              <Link to="/buses/11-st-georges" className={styles.route_link}>
+                11 St. George&rsquo;s
+              </Link>
+            </td>
             <td className={css(tachyons('pv2 ph3'))}>3 Zone</td>
           </tr>
           <tr className={css(tachyons('striped--light-gray'))}>
             <td className={css(tachyons('pv2 ph3'))}>
               <span role="img" aria-label="">
                 🖼
-              </span>{' '}
+              </span>
             </td>
             <td className={css(tachyons('tl pv2 ph3'))}>National Museum of Bermuda</td>
-            <td className={css(tachyons('pv2 ph3'))}>
-              <Link to="/buses/7-dockyard" className={css(tachyons('link dim'))}>
-                7
-              </Link>,{' '}
-              <Link to="/buses/8-dockyard" className={css(tachyons('link dim'))}>
-                8
+            <td className={styles.route_cell}>
+              <Link to="/buses/7-dockyard" className={styles.route_link}>
+                7 Dockyard
               </Link>{' '}
-              or Blue ferry
+              <Link to="/buses/8-dockyard" className={styles.route_link}>
+                8 Dockyard
+              </Link>{' '}
+              <Link to="/ferries#blueroute" className={styles.route_link}>
+                Blue Ferry
+              </Link>
             </td>
             <td className={css(tachyons('pv2 ph3'))}>14 Zone</td>
           </tr>
@@ -83,18 +110,35 @@ export default getSiteProps(({ title }) => (
             <td className={css(tachyons('pv2 ph3'))}>
               <span role="img" aria-label="">
                 🐡
-              </span>{' '}
+              </span>
             </td>
             <td className={css(tachyons('tl pv2 ph3'))}>
               Bermuda Underwater Exploration Institute
             </td>
-            <td className={css(tachyons('pv2 ph3'))}>
-              1, 3,{' '}
-              <Link to="/buses/7-dockyard" className={css(tachyons('link dim'))}>
-                7
-              </Link>,{' '}
-              <Link to="/buses/8-dockyard" className={css(tachyons('link dim'))}>
-                8
+            <td className={styles.route_cell}>
+              <Link to="/buses/1-grotto-bay" className={styles.route_link}>
+                1 Grotto Bay
+              </Link>{' '}
+              <Link to="/buses/1-st-georges" className={styles.route_link}>
+                1 St. George&rsquo;s
+              </Link>{' '}
+              <Link to="/buses/3-grotto-bay" className={styles.route_link}>
+                3 Grotto Bay
+              </Link>{' '}
+              <Link to="/buses/3-st-georges" className={styles.route_link}>
+                3 St. George&rsquo;s
+              </Link>{' '}
+              <Link to="/buses/7-dockyard" className={styles.route_link}>
+                7 Dockyard
+              </Link>{' '}
+              <Link to="/buses/7-barnes-corner" className={styles.route_link}>
+                7 Barnes Corner
+              </Link>{' '}
+              <Link to="/buses/8-dockyard" className={styles.route_link}>
+                8 Dockyard
+              </Link>{' '}
+              <Link to="/buses/8-somerset" className={styles.route_link}>
+                8 Somerset
               </Link>
             </td>
             <td className={css(tachyons('pv2 ph3'))}>3 Zone</td>
@@ -103,13 +147,21 @@ export default getSiteProps(({ title }) => (
             <td className={css(tachyons('pv2 ph3'))}>
               <span role="img" aria-label="Gardens">
                 🌺
-              </span>{' '}
+              </span>
             </td>
             <td className={css(tachyons('tl pv2 ph3'))}>Botanical Gardens</td>
-            <td className={css(tachyons('pv2 ph3'))}>
-              1,{' '}
-              <Link to="/buses/7-dockyard" className={css(tachyons('link dim'))}>
-                7
+            <td className={styles.route_cell}>
+              <Link to="/buses/1-grotto-bay" className={styles.route_link}>
+                1 Grotto Bay
+              </Link>{' '}
+              <Link to="/buses/1-st-georges" className={styles.route_link}>
+                1 St. George&rsquo;s
+              </Link>{' '}
+              <Link to="/buses/7-dockyard" className={styles.route_link}>
+                7 Dockyard
+              </Link>{' '}
+              <Link to="/buses/7-barnes-corner" className={styles.route_link}>
+                7 Barnes Corner
               </Link>
             </td>
             <td className={css(tachyons('pv2 ph3'))}>3 Zone</td>
@@ -118,22 +170,44 @@ export default getSiteProps(({ title }) => (
             <td className={css(tachyons('pv2 ph3'))}>
               <span role="img" aria-label="Crystal">
                 🔮
-              </span>{' '}
+              </span>
             </td>
             <td className={css(tachyons('tl pv2 ph3'))}>Crystal Caves of Bermuda</td>
-            <td className={css(tachyons('pv2 ph3'))}>1, 3, 10, 11</td>
+            <td className={styles.route_cell}>
+              <Link to="/buses/1-grotto-bay" className={styles.route_link}>
+                1 Grotto Bay
+              </Link>{' '}
+              <Link to="/buses/1-st-georges" className={styles.route_link}>
+                1 St. George&rsquo;s
+              </Link>{' '}
+              <Link to="/buses/3-grotto-bay" className={styles.route_link}>
+                3 Grotto Bay
+              </Link>{' '}
+              <Link to="/buses/3-st-georges" className={styles.route_link}>
+                3 St. George&rsquo;s
+              </Link>{' '}
+              <Link to="/buses/10-st-georges" className={styles.route_link}>
+                10 St. George&rsquo;s
+              </Link>{' '}
+              <Link to="/buses/11-st-georges" className={styles.route_link}>
+                11 St. George&rsquo;s
+              </Link>
+            </td>
             <td className={css(tachyons('pv2 ph3'))}>14 Zone</td>
           </tr>
           <tr className={css(tachyons('striped--light-gray'))}>
             <td className={css(tachyons('pv2 ph3'))}>
               <span role="img" aria-label="Beach">
                 🏖
-              </span>{' '}
+              </span>
             </td>
             <td className={css(tachyons('tl pv2 ph3'))}>Elbow Beach</td>
-            <td className={css(tachyons('pv2 ph3'))}>
-              <Link to="/buses/7-dockyard" className={css(tachyons('link dim'))}>
-                7
+            <td className={styles.route_cell}>
+              <Link to="/buses/7-dockyard" className={styles.route_link}>
+                7 Dockyard
+              </Link>{' '}
+              <Link to="/buses/7-barnes-corner" className={styles.route_link}>
+                7 Barnes Corner
               </Link>
             </td>
             <td className={css(tachyons('pv2 ph3'))}>3 Zone</td>
@@ -142,15 +216,21 @@ export default getSiteProps(({ title }) => (
             <td className={css(tachyons('pv2 ph3'))}>
               <span role="img" aria-label="Hotel">
                 🏨
-              </span>{' '}
+              </span>
             </td>
             <td className={css(tachyons('tl pv2 ph3'))}>Fairmont Southampton</td>
-            <td className={css(tachyons('pv2 ph3'))}>
-              <Link to="/buses/7-dockyard" className={css(tachyons('link dim'))}>
-                7
-              </Link>,{' '}
-              <Link to="/buses/8-dockyard" className={css(tachyons('link dim'))}>
-                8
+            <td className={styles.route_cell}>
+              <Link to="/buses/7-dockyard" className={styles.route_link}>
+                7 Dockyard
+              </Link>{' '}
+              <Link to="/buses/7-barnes-corner" className={styles.route_link}>
+                7 Barnes Corner
+              </Link>{' '}
+              <Link to="/buses/8-dockyard" className={styles.route_link}>
+                8 Dockyard
+              </Link>{' '}
+              <Link to="/buses/8-somerset" className={styles.route_link}>
+                8 Somerset
               </Link>
             </td>
             <td className={css(tachyons('pv2 ph3'))}>3 Zone</td>
@@ -159,12 +239,15 @@ export default getSiteProps(({ title }) => (
             <td className={css(tachyons('pv2 ph3'))}>
               <span role="img" aria-label="Light">
                 💡
-              </span>{' '}
+              </span>
             </td>
             <td className={css(tachyons('tl pv2 ph3'))}>Gibbs Hill Lighthouse</td>
-            <td className={css(tachyons('pv2 ph3'))}>
-              <Link to="/buses/7-dockyard" className={css(tachyons('link dim'))}>
-                7
+            <td className={styles.route_cell}>
+              <Link to="/buses/7-dockyard" className={styles.route_link}>
+                7 Dockyard
+              </Link>{' '}
+              <Link to="/buses/7-barnes-corner" className={styles.route_link}>
+                7 Barnes Corner
               </Link>
             </td>
             <td className={css(tachyons('pv2 ph3'))}>3 Zone</td>
@@ -173,22 +256,44 @@ export default getSiteProps(({ title }) => (
             <td className={css(tachyons('pv2 ph3'))}>
               <span role="img" aria-label="Hotel">
                 🏨
-              </span>{' '}
+              </span>
             </td>
             <td className={css(tachyons('tl pv2 ph3'))}>Grotto Bay Beach Resort</td>
-            <td className={css(tachyons('pv2 ph3'))}>1, 3, 10, 11</td>
+            <td className={styles.route_cell}>
+              <Link to="/buses/1-grotto-bay" className={styles.route_link}>
+                1 Grotto Bay
+              </Link>{' '}
+              <Link to="/buses/1-st-georges" className={styles.route_link}>
+                1 St. George&rsquo;s
+              </Link>{' '}
+              <Link to="/buses/3-grotto-bay" className={styles.route_link}>
+                3 Grotto Bay
+              </Link>{' '}
+              <Link to="/buses/3-st-georges" className={styles.route_link}>
+                3 St. George&rsquo;s
+              </Link>{' '}
+              <Link to="/buses/10-st-georges" className={styles.route_link}>
+                10 St. George&rsquo;s
+              </Link>{' '}
+              <Link to="/buses/11-st-georges" className={styles.route_link}>
+                11 St. George&rsquo;s
+              </Link>
+            </td>
             <td className={css(tachyons('pv2 ph3'))}>14 Zone</td>
           </tr>
           <tr className={css(tachyons('striped--light-gray'))}>
             <td className={css(tachyons('pv2 ph3'))}>
               <span role="img" aria-label="Beach">
                 🏖
-              </span>{' '}
+              </span>
             </td>
             <td className={css(tachyons('tl pv2 ph3'))}>Horseshoe Bay</td>
-            <td className={css(tachyons('pv2 ph3'))}>
-              <Link to="/buses/7-dockyard" className={css(tachyons('link dim'))}>
-                7
+            <td className={styles.route_cell}>
+              <Link to="/buses/7-dockyard" className={styles.route_link}>
+                7 Dockyard
+              </Link>{' '}
+              <Link to="/buses/7-barnes-corner" className={styles.route_link}>
+                7 Barnes Corner
               </Link>
             </td>
             <td className={css(tachyons('pv2 ph3'))}>3 Zone</td>
@@ -197,13 +302,21 @@ export default getSiteProps(({ title }) => (
             <td className={css(tachyons('pv2 ph3'))}>
               <span role="img" aria-label="Hospital">
                 🏥
-              </span>{' '}
+              </span>
             </td>
             <td className={css(tachyons('tl pv2 ph3'))}>Hospital</td>
-            <td className={css(tachyons('pv2 ph3'))}>
-              1,{' '}
-              <Link to="/buses/7-dockyard" className={css(tachyons('link dim'))}>
-                7
+            <td className={styles.route_cell}>
+              <Link to="/buses/1-grotto-bay" className={styles.route_link}>
+                1 Grotto Bay
+              </Link>{' '}
+              <Link to="/buses/1-st-georges" className={styles.route_link}>
+                1 St. George&rsquo;s
+              </Link>{' '}
+              <Link to="/buses/7-dockyard" className={styles.route_link}>
+                7 Dockyard
+              </Link>{' '}
+              <Link to="/buses/7-barnes-corner" className={styles.route_link}>
+                7 Barnes Corner
               </Link>
             </td>
             <td className={css(tachyons('pv2 ph3'))}>3 Zone</td>
@@ -212,35 +325,58 @@ export default getSiteProps(({ title }) => (
             <td className={css(tachyons('pv2 ph3'))}>
               <span role="img" aria-label="Beach">
                 🏖
-              </span>{' '}
+              </span>
             </td>
             <td className={css(tachyons('tl pv2 ph3'))}>John Smith’s Bay</td>
-            <td className={css(tachyons('pv2 ph3'))}>1</td>
+            <td className={styles.route_cell}>
+              <Link to="/buses/1-grotto-bay" className={styles.route_link}>
+                1 Grotto Bay
+              </Link>{' '}
+              <Link to="/buses/1-st-georges" className={styles.route_link}>
+                1 St. George&rsquo;s
+              </Link>{' '}
+            </td>
             <td className={css(tachyons('pv2 ph3'))}>3 Zone</td>
           </tr>
           <tr className={css(tachyons('striped--light-gray'))}>
             <td className={css(tachyons('pv2 ph3'))}>
               <span role="img" aria-label="Airport">
                 ✈️
-              </span>{' '}
+              </span>
             </td>
             <td className={css(tachyons('tl pv2 ph3'))}>L.F. Wade International Airport</td>
-            <td className={css(tachyons('pv2 ph3'))}>1, 3, 10, 11</td>
+            <td className={styles.route_cell}>
+              <Link to="/buses/1-st-georges" className={styles.route_link}>
+                1 St. George&rsquo;s
+              </Link>{' '}
+              <Link to="/buses/3-st-georges" className={styles.route_link}>
+                3 St. George&rsquo;s
+              </Link>{' '}
+              <Link to="/buses/10-st-georges" className={styles.route_link}>
+                10 St. George&rsquo;s
+              </Link>{' '}
+              <Link to="/buses/11-st-georges" className={styles.route_link}>
+                11 St. George&rsquo;s
+              </Link>
+            </td>
             <td className={css(tachyons('pv2 ph3'))}>14 Zone</td>
           </tr>
           <tr className={css(tachyons('striped--light-gray'))}>
             <td className={css(tachyons('pv2 ph3'))}>
               <span role="img" aria-label="Palm">
                 🌴
-              </span>{' '}
+              </span>
             </td>
             <td className={css(tachyons('tl pv2 ph3'))}>Mangrove Bay (Somerset)</td>
-            <td className={css(tachyons('pv2 ph3'))}>
-              <Link to="/buses/7-dockyard" className={css(tachyons('link dim'))}>
-                7
-              </Link>,{' '}
-              <Link to="/buses/8-dockyard" className={css(tachyons('link dim'))}>
-                8
+            <td className={styles.route_cell}>
+              <Link to="/buses/7-dockyard" className={styles.route_link}>
+                7 Dockyard
+              </Link>{' '}
+              <Link to="/buses/8-dockyard" className={styles.route_link}>
+                8 Dockyard
+              </Link>{' '}
+              <Link to="/buses/8-somerset" className={styles.route_link}>
+                8 Somerset
               </Link>
             </td>
             <td className={css(tachyons('pv2 ph3'))}>14 Zone</td>
@@ -249,17 +385,19 @@ export default getSiteProps(({ title }) => (
             <td className={css(tachyons('pv2 ph3'))}>
               <span role="img" aria-label="Cruise ship">
                 🛳
-              </span>{' '}
+              </span>
             </td>
             <td className={css(tachyons('tl pv2 ph3'))}>Royal Naval Dockyard</td>
-            <td className={css(tachyons('pv2 ph3'))}>
-              <Link to="/buses/7-dockyard" className={css(tachyons('link dim'))}>
-                7
-              </Link>,{' '}
-              <Link to="/buses/8-dockyard" className={css(tachyons('link dim'))}>
-                8
+            <td className={styles.route_cell}>
+              <Link to="/buses/7-dockyard" className={styles.route_link}>
+                7 Dockyard
               </Link>{' '}
-              or Blue Ferry
+              <Link to="/buses/8-dockyard" className={styles.route_link}>
+                8 Dockyard
+              </Link>{' '}
+              <Link to="/ferries#blueroute" className={styles.route_link}>
+                Blue Ferry
+              </Link>
             </td>
             <td className={css(tachyons('pv2 ph3'))}>14 Zone</td>
           </tr>
@@ -267,20 +405,46 @@ export default getSiteProps(({ title }) => (
             <td className={css(tachyons('pv2 ph3'))}>
               <span role="img" aria-label="Town">
                 🏡
-              </span>{' '}
+              </span>
             </td>
-            <td className={css(tachyons('tl pv2 ph3'))}>St. George’s</td>
-            <td className={css(tachyons('pv2 ph3'))}>1, 3, 10, 11</td>
+            <td className={css(tachyons('tl pv2 ph3'))}>St. George&rsquo;s</td>
+            <td className={styles.route_cell}>
+              <Link to="/buses/1-st-georges" className={styles.route_link}>
+                1 St. George&rsquo;s
+              </Link>{' '}
+              <Link to="/buses/3-st-georges" className={styles.route_link}>
+                3 St. George&rsquo;s
+              </Link>{' '}
+              <Link to="/buses/10-st-georges" className={styles.route_link}>
+                10 St. George&rsquo;s
+              </Link>{' '}
+              <Link to="/buses/11-st-georges" className={styles.route_link}>
+                11 St. George&rsquo;s
+              </Link>
+            </td>
             <td className={css(tachyons('pv2 ph3'))}>14 Zone</td>
           </tr>
           <tr className={css(tachyons('striped--light-gray'))}>
             <td className={css(tachyons('pv2 ph3'))}>
               <span role="img" aria-label="Hotel">
                 🏨
-              </span>{' '}
+              </span>
             </td>
             <td className={css(tachyons('tl pv2 ph3'))}>Tucker’s Point Resort</td>
-            <td className={css(tachyons('pv2 ph3'))}>1, 3</td>
+            <td className={styles.route_cell}>
+              <Link to="/buses/1-grotto-bay" className={styles.route_link}>
+                1 Grotto Bay
+              </Link>{' '}
+              <Link to="/buses/1-st-georges" className={styles.route_link}>
+                1 St. George&rsquo;s
+              </Link>{' '}
+              <Link to="/buses/3-grotto-bay" className={styles.route_link}>
+                3 Grotto Bay
+              </Link>{' '}
+              <Link to="/buses/3-st-georges" className={styles.route_link}>
+                3 St. George&rsquo;s
+              </Link>{' '}
+            </td>
             <td className={css(tachyons('pv2 ph3'))}>14 Zone</td>
           </tr>
         </tbody>

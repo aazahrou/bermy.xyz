@@ -1,5 +1,6 @@
 import React from 'react'
-import { getSiteProps, Head, Link } from 'react-static'
+import { getSiteProps, Head } from 'react-static'
+import { Link } from 'react-router-dom'
 import { wrap, reset, tachyons } from 'glamor-tachyons'
 import { css, insertRule } from 'glamor'
 import glamorous from 'glamorous'
@@ -87,6 +88,18 @@ export default getSiteProps(({ title }) => (
       <p>
         The Department of Public Transportation does not assume responsibility for lost property.
       </p>
+      <dl className={css(tachyons('f5 lh-title mv2'))}>
+        <dt className={css(tachyons('dib pa1 white bg-pink'))}>Pink poles</dt>
+        <dd className={css(tachyons('dib ml1'))}>
+          indicate service <strong>inbound</strong> to the City of Hamilton
+        </dd>
+      </dl>
+      <dl className={css(tachyons('f5 lh-title mv2'))}>
+        <dt className={css(tachyons('dib pa1 white bg-blue'))}>Blue poles</dt>
+        <dd className={css(tachyons('dib ml1'))}>
+          indicate service <strong>outbound</strong> from the City of Hamilton
+        </dd>
+      </dl>
     </section>
     <section
       className={css(
