@@ -142,6 +142,7 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; Grotto Bay</span>
+            <div className={css(tachyons('f6'))}>via Tucker&rsquo;s Town and The Caves</div>
           </Link>
           <Link
             to="/buses/3-grotto-bay"
@@ -157,6 +158,9 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; Grotto Bay</span>
+            <div className={css(tachyons('f6'))}>
+              via Middle Road, Devil&rsquo;s Hole and The Caves
+            </div>
           </Link>
         </div>
       </div>
@@ -177,6 +181,9 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; St. George&rsquo;s</span>
+            <div className={css(tachyons('f6'))}>
+              via Tucker&rsquo;s Town, The Caves and Grotto Bay
+            </div>
           </Link>
           <Link
             to="/buses/3-st-georges"
@@ -192,6 +199,9 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; St. George&rsquo;s</span>
+            <div className={css(tachyons('f6'))}>
+              via Middle Road, Devil&rsquo;s Hole, The Caves and Swizzle Inn
+            </div>
           </Link>
           <Link
             to="/buses/6-st-georges"
@@ -207,6 +217,9 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>St. George&rsquo;s &bull; St. David&rsquo;s</span>
+            <div className={css(tachyons('f6'))}>
+              via Southside Gate 1 / Main Road and Clearwater Beach
+            </div>
           </Link>
           <Link
             to="/buses/10-st-georges"
@@ -222,6 +235,7 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; St. George&rsquo;s</span>
+            <div className={css(tachyons('f6'))}>via Palmetto Road, Aquarium and Grotto Bay</div>
           </Link>
           <Link
             to="/buses/11-st-georges"
@@ -237,6 +251,7 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; St. George&rsquo;s</span>
+            <div className={css(tachyons('f6'))}>via Blackwatch Pass Aquarium and Grotto Bay</div>
           </Link>
         </div>
       </div>
@@ -261,6 +276,7 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; Spanish Point</span>
+            <div className={css(tachyons('f6'))}>via St. John&rsquo;s Road or North Shore Road</div>
           </Link>
           <Link
             to="/buses/5-pond-hill"
@@ -276,6 +292,7 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; Pond Hill</span>
+            <div className={css(tachyons('f6'))}>via Glebe Road</div>
           </Link>
           <Link
             className={css(
@@ -291,6 +308,12 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; Prospect</span>
+            <div className={css(tachyons('f6'))}>
+              via National Sports Centre{' '}
+              <span role="img" aria-label="medal">
+                🏅
+              </span>
+            </div>
           </Link>
         </div>
       </div>
@@ -315,6 +338,16 @@ export default getSiteProps(({ title }) => (
               <br />
             </span>
             <span className={css(tachyons('f4'))}>Hamilton &bull; Ord Road</span>
+            <div className={css(tachyons('f6'))}>
+              via Botanical Gardens{' '}
+              <span role="img" aria-label="flower">
+                🌺
+              </span>{' '}
+              and Elbow Beach{' '}
+              <span role="img" aria-label="beach">
+                🏖
+              </span>
+            </div>
           </Link>
         </div>
       </div>
